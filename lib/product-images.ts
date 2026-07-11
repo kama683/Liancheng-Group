@@ -1,10 +1,9 @@
 import { ASSETS } from "@/lib/assets";
 import { CATALOG_NAV } from "@/lib/site";
 
-const SUBMERSIBLE_SEWAGE_BASE = "/assets/catalog/Submersible Sewage";
-const CATEGORY_HERO_BASE = "/assets/catalog/categories";
+const SUBMERSIBLE_SEWAGE_BASE = "/assets/catalog/submersible-sewage";
 
-/** Product slug → catalog image path (Submersible Sewage folder). */
+/** Product slug → catalog image path (submersible-sewage folder). */
 export const PRODUCT_IMAGE_BY_SLUG: Record<string, string> = {
   lpt: `${SUBMERSIBLE_SEWAGE_BASE}/LP-T-_1677202957_WNo_800d450.jpg`,
   qz: `${SUBMERSIBLE_SEWAGE_BASE}/QZ-QH_1677373119_WNo_800d450.jpg`,
@@ -17,23 +16,9 @@ export const PRODUCT_IMAGE_BY_SLUG: Record<string, string> = {
   wq: `${SUBMERSIBLE_SEWAGE_BASE}/WQ_1675840180_WNo_800d450.jpg`,
 };
 
-/**
- * Dedicated category hero images.
- * Add files to `public/assets/catalog/categories/{panel-id}.png` and register here.
- */
+/** Dedicated category hero banners that exist in public/assets. */
 export const CATEGORY_PANEL_HERO_IMAGES: Record<string, string> = {
-  "wastewater-submersible": `${SUBMERSIBLE_SEWAGE_BASE}/submer_1732707241_WNo_4167d4167 (1).png`,
-  "single-suction-centrifugal": `${CATEGORY_HERO_BASE}/single-suction-centrifugal.png`,
-  "double-suction-split-case": `${CATEGORY_HERO_BASE}/double-suction-split-case.png`,
-  "vertical-long-shaft": `${CATEGORY_HERO_BASE}/vertical-long-shaft.png`,
-  "axial-mixed-flow": `${CATEGORY_HERO_BASE}/axial-mixed-flow.png`,
-  petrochemical: `${CATEGORY_HERO_BASE}/petrochemical.png`,
-  "control-panel": `${CATEGORY_HERO_BASE}/control-panel.png`,
-  "fire-pump": `${CATEGORY_HERO_BASE}/fire-pump.png`,
-  "water-supply-complete": `${CATEGORY_HERO_BASE}/water-supply-complete.png`,
-  valves: `${CATEGORY_HERO_BASE}/valves.png`,
-  control: `${CATEGORY_HERO_BASE}/control.png`,
-  "water-modular": `${CATEGORY_HERO_BASE}/water-modular.png`,
+  "wastewater-submersible": `${SUBMERSIBLE_SEWAGE_BASE}/submer.png`,
 };
 
 export function getCategoryPanelHeroImage(

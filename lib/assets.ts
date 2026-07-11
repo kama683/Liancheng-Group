@@ -2,25 +2,25 @@
 
 export const ASSETS = {
   logo: {
-    src: "/assets/chatgpt-image-8-2026-10_24_09-mrc53lj4-removebg-preview.png",
+    src: "/assets/logo/chatgpt-image-8-2026-10_24_09-mrc53lj4-removebg-preview.png",
     width: 500,
     height: 500,
     alt: "Liancheng",
   },
   heroBg: {
-    src: "/assets/chatgpt-image-8-2026-10_18_08-mrc55t9q-removebg-preview.png",
+    src: "/assets/logo/chatgpt-image-8-2026-10_18_08-mrc55t9q-removebg-preview.png",
     width: 500,
     height: 500,
     alt: "",
   },
   logoColor: {
-    src: "/assets/logo-color.png",
+    src: "/assets/logo/logo-color.png",
     width: 1024,
     height: 1024,
     alt: "Liancheng",
   },
   logoFaint: {
-    src: "/assets/logo-faint.png",
+    src: "/assets/logo/logo-faint.png",
     width: 1024,
     height: 1024,
     alt: "",

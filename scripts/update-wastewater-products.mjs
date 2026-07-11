@@ -7,7 +7,7 @@ const catalogPath = path.join(__dirname, "../data/catalog.json");
 const data = JSON.parse(fs.readFileSync(catalogPath, "utf8"));
 
 const SECTION = "ПОГРУЖНОЙ НАСОС ДЛЯ СТОЧНЫХ ВОД";
-const IMAGE_BASE = "/assets/catalog/Submersible Sewage";
+const IMAGE_BASE = "/assets/catalog/submersible-sewage";
 
 const WASTEWATER_PRODUCTS = {
   lpt: {
