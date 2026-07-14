@@ -34,14 +34,12 @@ export default function RootLayout({
     <html
       lang="ru"
       data-scroll-behavior="smooth"
-      className={`${manrope.variable} ${ptSans.variable} h-full antialiased`}
+      className={`${manrope.variable} ${ptSans.variable} antialiased`}
     >
-      <body className="min-h-full flex flex-col">
-        <div className="w-full overflow-x-hidden flex flex-col min-h-full">
-          <Header />
-          <main className="flex-1">{children}</main>
-          <Footer />
-        </div>
+      <body>
+        <Header />
+        <main>{children}</main>
+        <Footer />
       </body>
     </html>
   );

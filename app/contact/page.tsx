@@ -16,11 +16,11 @@ export default function ContactPage() {
     <>
       <section className="relative bg-surface overflow-hidden border-b border-[#eef4f7]">
         <HeroBgImage variant="contact" />
-        <PageContainer className="relative z-10 py-10 pb-20">
+        <PageContainer className="relative z-10 py-10 pb-24">
           <Breadcrumb
             items={[{ label: "Главная", href: "/" }, { label: "Контакты" }]}
           />
-          <div className="max-w-[640px]">
+          <div className="max-w-[640px] mt-6">
             <div className="inline-block text-xs font-bold tracking-[1.4px] uppercase text-primary bg-white border border-[#e3f2f7] px-4.5 py-2.5 rounded-pill mb-6">
               Контакты
             </div>
@@ -28,9 +28,8 @@ export default function ContactPage() {
               Свяжитесь с нами
             </h1>
             <p className="text-lg leading-relaxed text-muted mt-5">
-              Наша команда поможет подобрать насосное оборудование, трубопроводную
-              арматуру и комплексные инженерные решения под требования вашего
-              проекта.
+              Одна заявка — для клиента и для инженера. Опишите задачу, а
+              технические параметры добавьте только при необходимости.
             </p>
           </div>
         </PageContainer>

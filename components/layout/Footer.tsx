@@ -13,8 +13,8 @@ const CONTACT_PHONE = "+86 21 XXXX XXXX";
 
 export function Footer() {
   return (
-    <footer className="bg-footer text-footer-text mt-20">
-      <div className="max-w-[var(--container-content)] mx-auto px-8 pt-16 pb-7">
+    <footer className="bg-footer text-footer-text">
+      <div className="max-w-[var(--container-content)] mx-auto px-8 pt-16 pb-10">
         <div className="grid grid-cols-1 tablet:grid-cols-5 gap-10">
           <div className="tablet:col-span-1">
             <div className="flex items-center gap-3">

@@ -27,7 +27,9 @@ export const INQUIRY_ICONS = {
 
 const CONTACT_LABEL_ICONS: Record<string, LucideIcon> = {
   "Главный офис": Building2,
+  Адрес: Building2,
   "Электронная почта": Mail,
+  Email: Mail,
   Телефон: Phone,
   "Время работы": Clock,
 };
