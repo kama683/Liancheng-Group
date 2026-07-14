@@ -15,7 +15,7 @@ export default function ContactPage() {
   return (
     <>
       <section className="relative bg-surface overflow-hidden border-b border-[#eef4f7]">
-        <HeroBgImage variant="home" />
+        <HeroBgImage variant="contact" />
         <PageContainer className="relative z-10 py-10 pb-20">
           <Breadcrumb
             items={[{ label: "Главная", href: "/" }, { label: "Контакты" }]}

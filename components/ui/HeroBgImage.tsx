@@ -2,13 +2,65 @@ import Image from "next/image";
 import { ASSETS } from "@/lib/assets";
 import { cn } from "@/lib/utils";
 
-type HeroBgVariant = "page" | "catalog" | "home";
+type HeroBgVariant = "page" | "catalog" | "home" | "contact";
 
 const variantClasses: Record<"page" | "catalog", string> = {
   page: "absolute -right-[60px] top-1/2 -translate-y-1/2 w-[min(820px,62vw)] h-auto object-contain opacity-[0.34] z-0 pointer-events-none max-tablet:-right-[120px] max-tablet:opacity-[0.22] max-tablet:w-[min(680px,95vw)]",
   catalog:
     "absolute -right-[30px] top-1/2 -translate-y-1/2 w-[min(520px,75%)] h-auto object-contain opacity-45 pointer-events-none",
 };
+
+/** Pump + blueprint: separate sizes per page */
+const pumpLayouts = {
+  home: {
+    frame:
+      "absolute right-0 top-1/2 -translate-y-1/2 w-[min(700px,60vw)] max-tablet:w-[min(640px,90vw)]",
+    grid: "w-[min(1220px,94vw)] max-tablet:w-[min(860px,105vw)]",
+  },
+  contact: {
+    frame:
+      "absolute right-30 top-1/2 -translate-y-1/2 w-[min(520px,42vw)] max-tablet:w-[min(400px,78vw)]",
+    grid: "w-[min(780px,70vw)] max-tablet:w-[min(560px,95vw)]",
+  },
+} as const;
+
+function PumpHeroBackdrop({
+  layout,
+  className,
+  priority,
+}: {
+  layout: keyof typeof pumpLayouts;
+  className?: string;
+  priority?: boolean;
+}) {
+  const sizes = pumpLayouts[layout];
+
+  return (
+    <div
+      className={cn(
+        sizes.frame,
+        "z-0 pointer-events-none flex items-center justify-center",
+        className
+      )}
+      aria-hidden
+    >
+      <div
+        className={cn(
+          "hero-blueprint-grid absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 aspect-square",
+          sizes.grid
+        )}
+      />
+      <Image
+        src={ASSETS.heroPump.src}
+        alt=""
+        width={ASSETS.heroPump.width}
+        height={ASSETS.heroPump.height}
+        priority={priority}
+        className="relative z-[1] w-full h-auto object-contain"
+      />
+    </div>
+  );
+}
 
 export function HeroBgImage({
   variant = "page",
@@ -19,33 +71,13 @@ export function HeroBgImage({
   className?: string;
   priority?: boolean;
 }) {
-  if (variant === "home") {
+  if (variant === "home" || variant === "contact") {
     return (
-      <div
-        className={cn(
-          "absolute right-20 top-1/2 -translate-y-1/2 z-0 pointer-events-none",
-          "flex items-center justify-center",
-          "w-[min(600px,58vw)] max-tablet:w-[min(540px,90vw)]",
-          className
-        )}
-        aria-hidden
-      >
-        {/*
-          Pixel-fixed CSS grid (not SVG) — keeps lines sharp and avoids
-          scaled-pattern moiré / double-layer look.
-        */}
-        <div
-          className="hero-blueprint-grid absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 w-[min(1180px,92vw)] aspect-square max-tablet:w-[min(820px,105vw)]"
-        />
-        <Image
-          src={ASSETS.heroPump.src}
-          alt=""
-          width={ASSETS.heroPump.width}
-          height={ASSETS.heroPump.height}
-          priority={priority}
-          className="relative z-[1] w-full h-auto object-contain"
-        />
-      </div>
+      <PumpHeroBackdrop
+        layout={variant}
+        className={className}
+        priority={priority}
+      />
     );
   }
 
