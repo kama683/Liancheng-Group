@@ -2,23 +2,77 @@ import { ASSETS } from "@/lib/assets";
 import { CATALOG_NAV } from "@/lib/site";
 
 const SUBMERSIBLE_SEWAGE_BASE = "/assets/catalog/submersible-sewage";
+const END_SUCTION_BASE = "/assets/catalog/end-suction-centrifugal";
+const DOUBLE_SUCTION_BASE = "/assets/catalog/double-suction-split-case";
+const LONG_SHAFT_BASE = "/assets/catalog/vertical-long-shaft";
+const AXIAL_MIXED_BASE = "/assets/catalog/axial-mixed-flow";
+const OIL_CHEMICAL_BASE = "/assets/catalog/oil-chemical-pump";
+const CONTROL_PANEL_BASE = "/assets/catalog/electric-control-panel";
+const FIRE_PUMP_BASE = "/assets/catalog/fire-extinguishing-pump";
+const MODULAR_SOLUTIONS_BASE = "/assets/catalog/modular-solutions";
 
-/** Product slug → catalog image path (submersible-sewage folder). */
+/** Product slug → catalog image path. */
 export const PRODUCT_IMAGE_BY_SLUG: Record<string, string> = {
-  lpt: `${SUBMERSIBLE_SEWAGE_BASE}/LP-T-_1677202957_WNo_800d450.jpg`,
-  qz: `${SUBMERSIBLE_SEWAGE_BASE}/QZ-QH_1677373119_WNo_800d450.jpg`,
+  lpt: `${LONG_SHAFT_BASE}/LP-T-_1675843651_WNo_800d450.jpg`,
+  qz: `${AXIAL_MIXED_BASE}/QZ-QH_1675844509_WNo_800d450.jpg`,
   yw: `${SUBMERSIBLE_SEWAGE_BASE}/1675924789021_1675925578_WNo_252d408.png`,
-  zhlbq: `${SUBMERSIBLE_SEWAGE_BASE}/Z-H-LB_1675844417_WNo_800d450.jpg`,
+  zhlbq: `${AXIAL_MIXED_BASE}/Z-H-LB_1677374615_WNo_800d450.jpg`,
   wqx: `${SUBMERSIBLE_SEWAGE_BASE}/WQX_1675841251_WNo_800d450.jpg`,
   "wq-ii": `${SUBMERSIBLE_SEWAGE_BASE}/WQ-II-_1675840944_WNo_800d450.jpg`,
   wl: `${SUBMERSIBLE_SEWAGE_BASE}/WL_1675840886_WNo_800d450.jpg`,
   wqc: `${SUBMERSIBLE_SEWAGE_BASE}/WQC-2-_1675840434_WNo_800d450.jpg`,
   wq: `${SUBMERSIBLE_SEWAGE_BASE}/WQ_1675840180_WNo_800d450.jpg`,
+  slnc: `${END_SUCTION_BASE}/SLNC_1677545320_WNo_800d450.jpg`,
+  sls: `${END_SUCTION_BASE}/SLS_1677545468_WNo_800d450.jpg`,
+  slw: `${END_SUCTION_BASE}/SLW-2-_1677544915_WNo_800d450.jpg`,
+  gdl: `${END_SUCTION_BASE}/GDL_1675848229_WNo_800d450.jpg`,
+  dg: `${END_SUCTION_BASE}/DG_1675848201_WNo_800d450.jpg`,
+  sld: `${END_SUCTION_BASE}/SLD-2-_1675848148_WNo_800d450.jpg`,
+  md: `${END_SUCTION_BASE}/MD_1675848056_WNo_800d450.jpg`,
+  slg: `${END_SUCTION_BASE}/SLG-2-_1675847980_WNo_800d450.jpg`,
+  slown: `${DOUBLE_SUCTION_BASE}/SLOWN.jpeg`,
+  slow: `${DOUBLE_SUCTION_BASE}/SLO-SLOW.jpg`,
+  "slow-2stage": `${DOUBLE_SUCTION_BASE}/SLOW.jpg`,
+  slda: `${OIL_CHEMICAL_BASE}/SLDA-BB1_1677374780_WNo_800d450.jpg`,
+  ly: `${OIL_CHEMICAL_BASE}/LY-VS1.png`,
+  ayg: `${OIL_CHEMICAL_BASE}/AYG-OH3.png`,
+  xl: `${OIL_CHEMICAL_BASE}/XL-_1677456564_WNo_800d450.jpg`,
+  slzae: `${OIL_CHEMICAL_BASE}/SLZAE_1677374970_WNo_800d450.jpg`,
+  slzaf: `${OIL_CHEMICAL_BASE}/SLZA-5-_1675845630_WNo_800d450.jpg`,
+  slza: `${OIL_CHEMICAL_BASE}/SLZA-2-_1675845529_WNo_800d450.jpg`,
+  slcz: `${OIL_CHEMICAL_BASE}/SLCZ_1677375071_WNo_800d450.jpg`,
+  slmc: `${OIL_CHEMICAL_BASE}/SLMC-BB4_1677375226_WNo_800d450.jpg`,
+  lec: `${CONTROL_PANEL_BASE}/Electrical-Control-Panel_1732707241_WNo_4167d4167.png`,
+  lbp: `${CONTROL_PANEL_BASE}/Electrical-Control-Panel_1732707241_WNo_4167d4167.png`,
+  "hv-control-cabinet": `${CONTROL_PANEL_BASE}/Electrical-Control-Panel_1732707241_WNo_4167d4167.png`,
+  lfb: `${CONTROL_PANEL_BASE}/Electrical-Control-Panel_1732707241_WNo_4167d4167.png`,
+  "lv-distribution": `${CONTROL_PANEL_BASE}/Electrical-Control-Panel_1732707241_WNo_4167d4167.png`,
+  "xbd-d": `${FIRE_PUMP_BASE}/image_1677374308_WNo_800d450.jpg`,
+  "xbd-dv": `${FIRE_PUMP_BASE}/XBD-DV-2-_1677374063_WNo_800d450.jpg`,
+  "xbd-dw": `${FIRE_PUMP_BASE}/XBD-DW-2-_1677374116_WNo_800d450.jpg`,
+  "xbd-w": `${FIRE_PUMP_BASE}/SBD-SLW_1677461586_WNo_800d450.jpg`,
+  "xbd-slw2": `${FIRE_PUMP_BASE}/XBD-SLW_1675842059_WNo_800d450.jpg`,
+  "xbd-sls2": `${FIRE_PUMP_BASE}/XBD-SLS_1675841926_WNo_800d450.jpg`,
+  "xbd-slow": `${FIRE_PUMP_BASE}/XBD-SLOW_1675841622_WNo_800d450.jpg`,
+  "xbd-gdl": `${FIRE_PUMP_BASE}/XBD-GDL_1675841533_WNo_800d450.jpg`,
+  xbc: `${FIRE_PUMP_BASE}/XBC.png`,
+  "smart-pump-station": `${MODULAR_SOLUTIONS_BASE}/LCZH_1677805732617_WNo_400d225.jpg`,
+  "smart-pump-room": `${MODULAR_SOLUTIONS_BASE}/LCZF.png`,
+  zwlv: `${MODULAR_SOLUTIONS_BASE}/ZWL-V-_1675845725_WNo_800d450.jpg`,
 };
 
 /** Dedicated category hero banners that exist in public/assets. */
 export const CATEGORY_PANEL_HERO_IMAGES: Record<string, string> = {
   "wastewater-submersible": `${SUBMERSIBLE_SEWAGE_BASE}/submer.png`,
+  "single-suction-centrifugal": `${END_SUCTION_BASE}/End-suction-Centrifugal-Pump_1732707241_WNo_4167d4167.png`,
+  "double-suction-split-case": `${DOUBLE_SUCTION_BASE}/Double-Suction-Split-Case-Water-Pump_1732707241_WNo_4167d4167.png`,
+  "vertical-long-shaft": `${LONG_SHAFT_BASE}/Vertical-Long-Shaft-Pump_1732707241_WNo_4167d4167.png`,
+  "axial-mixed-flow": `${AXIAL_MIXED_BASE}/111_1732707240_WNo_4167d4167.png`,
+  petrochemical: `${OIL_CHEMICAL_BASE}/Petroleum-Chemical-Pump_1732707241_WNo_4167d4167.png`,
+  "control-panel": `${CONTROL_PANEL_BASE}/Electrical-Control-Panel_1732707241_WNo_4167d4167.png`,
+  "fire-pump": `${FIRE_PUMP_BASE}/Fire-fighting-Pump_1732707241_WNo_4167d4167.png`,
+  "water-supply-complete": `${MODULAR_SOLUTIONS_BASE}/Compelete-Water-Supply-Equipment_1732707240_WNo_4167d4167.png`,
+  "water-modular": `${MODULAR_SOLUTIONS_BASE}/Compelete-Water-Supply-Equipment_1732707240_WNo_4167d4167.png`,
 };
 
 export function getCategoryPanelHeroImage(

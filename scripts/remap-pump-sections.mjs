@@ -35,7 +35,6 @@ function classifyPump(product) {
   ]);
   const waterSupplySlugs = new Set([
     "zwlv",
-    "zwl",
     "smart-pump-room",
     "smart-pump-station",
   ]);
@@ -44,7 +43,11 @@ function classifyPump(product) {
     return SECTION_TITLES.control;
   }
 
-  if (waterSupplySlugs.has(slug) || code.startsWith("ZWL")) {
+  if (
+    waterSupplySlugs.has(slug) ||
+    code.startsWith("LCZ") ||
+    code.startsWith("ZWL(I)")
+  ) {
     return SECTION_TITLES.waterSupply;
   }
 
@@ -63,24 +66,44 @@ function classifyPump(product) {
     slug.startsWith("xbd") ||
     slug === "xbc" ||
     slug === "fire-stable-water" ||
+    slug === "xbd-w" ||
     code.startsWith("XBD") ||
+    code.startsWith("XBC") ||
     section.includes("ПОЖАР")
   ) {
     return SECTION_TITLES.fire;
   }
 
-  if (slug === "qgls") {
+  if (slug === "lpt") {
+    return SECTION_TITLES.longShaft;
+  }
+
+  if (slug === "qgls" || slug === "zhlbq" || slug === "qz") {
     return SECTION_TITLES.axial;
   }
 
-  if (slug === "zw" || slug === "qjb") {
-    return SECTION_TITLES.singleSuction;
+  if (["wq", "wl", "wqc", "wqx", "yw", "wq-ii"].includes(slug)) {
+    return SECTION_TITLES.wastewater;
   }
 
   if (
-    ["wq", "wl", "wqc", "wqx", "yw", "qz", "lpt", "zhlbq", "wq-ii"].includes(slug)
+    [
+      "slnc",
+      "sls",
+      "slw",
+      "gdl",
+      "dg",
+      "sld",
+      "md",
+      "slg",
+      "ktl",
+      "sll",
+      "is",
+      "zw",
+      "qjb",
+    ].includes(slug)
   ) {
-    return SECTION_TITLES.wastewater;
+    return SECTION_TITLES.singleSuction;
   }
 
   if (
@@ -89,6 +112,8 @@ function classifyPump(product) {
       "ay",
       "ay-multistage",
       "slza",
+      "slzae",
+      "slzaf",
       "slcz",
       "ayg",
       "ly",
@@ -107,13 +132,9 @@ function classifyPump(product) {
   }
 
   if (
-    slug === "s" ||
-    slug.startsWith("slow") ||
-    slug === "slown" ||
-    slug === "dg" ||
-    slug === "sld" ||
-    slug === "md" ||
-    slug === "n" ||
+    ["slown", "slow", "slow-2stage", "slow-multistage", "s", "n"].includes(
+      slug
+    ) ||
     code.startsWith("SLO") ||
     code === "S" ||
     section.includes("ПРОМЫШЛЕННОЕ ПРИМЕНЕНИЕ")
