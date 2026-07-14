@@ -1,18 +1,21 @@
 import Image from "next/image";
 import Link from "next/link";
-import { MapPin } from "lucide-react";
+import { Mail, MapPin, Phone } from "lucide-react";
 import {
   BRAND,
+  CATALOG_NAV,
   COMPANY_NAME,
   LOGO_PATH,
-  MAIN_CATEGORIES,
 } from "@/lib/site";
+
+const CONTACT_EMAIL = "export@liancheng-group.com";
+const CONTACT_PHONE = "+86 21 XXXX XXXX";
 
 export function Footer() {
   return (
     <footer className="bg-footer text-footer-text mt-20">
       <div className="max-w-[var(--container-content)] mx-auto px-8 pt-16 pb-7">
-        <div className="grid grid-cols-1 tablet:grid-cols-4 gap-10">
+        <div className="grid grid-cols-1 tablet:grid-cols-5 gap-10">
           <div className="tablet:col-span-1">
             <div className="flex items-center gap-3">
               <Image
@@ -44,16 +47,23 @@ export function Footer() {
             </div>
           </div>
 
-          <div>
+          <div className="tablet:col-span-2">
             <h4 className="text-[13px] font-bold tracking-wide uppercase text-white mb-4">
               Продукция
             </h4>
-            <div className="flex flex-col gap-2.5 text-sm">
-              {MAIN_CATEGORIES.map((cat) => (
-                <FooterLink key={cat.id} href={cat.route}>
-                  {cat.title}
-                </FooterLink>
-              ))}
+            <div className="grid grid-cols-2 max-mobile:grid-cols-1 gap-x-6 gap-y-2.5 text-sm">
+              {CATALOG_NAV.map((item) => {
+                const href =
+                  item.category === "pumps" && item.page === "/products"
+                    ? `${item.page}#${item.id}`
+                    : item.page;
+
+                return (
+                  <FooterLink key={item.id} href={href}>
+                    {item.label}
+                  </FooterLink>
+                );
+              })}
             </div>
           </div>
 
@@ -71,6 +81,28 @@ export function Footer() {
                 />
                 Промышленный парк Фэнбан, Шанхай
               </span>
+              <a
+                href={`mailto:${CONTACT_EMAIL}`}
+                className="inline-flex items-start gap-2 text-footer-link hover:text-primary no-underline"
+              >
+                <Mail
+                  className="mt-0.5 size-4 shrink-0 text-primary"
+                  strokeWidth={2}
+                  aria-hidden
+                />
+                {CONTACT_EMAIL}
+              </a>
+              <a
+                href={`tel:${CONTACT_PHONE.replace(/\s/g, "")}`}
+                className="inline-flex items-start gap-2 text-footer-link hover:text-primary no-underline"
+              >
+                <Phone
+                  className="mt-0.5 size-4 shrink-0 text-primary"
+                  strokeWidth={2}
+                  aria-hidden
+                />
+                {CONTACT_PHONE}
+              </a>
             </div>
           </div>
         </div>

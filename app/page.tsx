@@ -28,8 +28,8 @@ export default function HomePage() {
   return (
     <>
       <section className="relative bg-white overflow-hidden min-h-[620px]">
-        <HeroBgImage variant="page" priority />
-        <PageContainer className="relative z-10 py-24 pb-22">
+        <HeroBgImage variant="home" priority />
+        <PageContainer className="relative z-10 py-17 pb-22">
           <div className="max-w-[640px]">
             <div className="inline-block text-xs font-bold tracking-[1.4px] uppercase text-primary bg-[#f4fafc] border border-[#e3f2f7] px-4.5 py-2.5 rounded-pill mb-7">
               {COMPANY_NAME.toUpperCase()}

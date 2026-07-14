@@ -91,7 +91,7 @@ export function ContactForms() {
                   ]}
                 />
                 <textarea
-                  className="contact-input w-full min-h-[148px] resize-y mt-4"
+                  className="contact-input w-full min-h-[148px] resize-y mt-4 py-3.5 px-4 border border-border-mid rounded-md text-[15px] text-body bg-white focus:outline-none focus:border-primary focus:shadow-[0_0_0_3px_rgba(23,165,204,0.12)]"
                   name="message"
                   placeholder="Сообщение"
                 />
@@ -121,22 +121,35 @@ export function ContactForms() {
                   />
                 </div>
                 <div className="mb-7 pb-7 border-b border-[#e2eaf0]">
-                  <div className="font-bold text-base text-heading mb-4.5">
+                  <div className="font-bold text-base text-heading mb-1.5">
                     Технические параметры
                   </div>
+                  <p className="text-[13px] text-subtle mb-4.5 leading-snug">
+                    Укажите желаемые характеристики — все поля необязательны.
+                  </p>
                   <FormRows
                     fields={[
+                      ["text", "model", "Модель"],
                       ["text", "flow", "Расход (м³/ч)"],
                       ["text", "head", "Напор (м)"],
-                      ["text", "medium", "Перекачиваемая среда"],
-                      ["text", "temperature", "Температура (°C)"],
+                      ["text", "power", "Мощность (кВт)"],
+                      ["text", "speed", "Частота вращения (об/мин)"],
+                      ["text", "efficiency", "КПД (%)"],
+                      ["text", "temperature", "Рабочая температура (°C)"],
+                      ["text", "inlet_diameter", "Диаметр всасывания (мм)"],
                     ]}
                   />
                   <AccordionDetails title="Дополнительные параметры">
                     <FormRows
                       fields={[
-                        ["text", "power", "Мощность (кВт)"],
-                        ["text", "voltage", "Напряжение"],
+                        ["text", "outlet_diameter", "Диаметр нагнетания (мм)"],
+                        ["text", "pump_material", "Материал насоса"],
+                        ["text", "motor", "Двигатель"],
+                        ["text", "voltage", "Напряжение (В)"],
+                        ["text", "protection_level", "Степень защиты"],
+                        ["text", "cooling_method", "Способ охлаждения"],
+                        ["text", "motor_efficiency", "КПД двигателя (%)"],
+                        ["text", "weight", "Масса (кг)"],
                       ]}
                     />
                   </AccordionDetails>

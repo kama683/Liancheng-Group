@@ -99,3 +99,53 @@ h4 {
 .animate-contact-fade-in {
   animation: contact-fade-in 0.35s ease;
 }
+
+/*
+  Engineering blueprint grid behind the home hero pump.
+  Minor: 20px cells at ~50% intensity. Major: every 5 cells (100px), slightly thicker.
+  Same alignment origin — one coordinate system, not two random overlays.
+  Radial mask fades the mesh into white; no circle border.
+*/
+.hero-blueprint-grid {
+  --grid-minor: rgba(184, 217, 232, 0.5);
+  --grid-major: #b8d9e8;
+  background-color: transparent;
+  background-image:
+    /* major vertical */
+    linear-gradient(to right, var(--grid-major) 0 1.75px, transparent 1.75px),
+    /* major horizontal */
+    linear-gradient(to bottom, var(--grid-major) 0 1.75px, transparent 1.75px),
+    /* minor vertical */
+    linear-gradient(to right, var(--grid-minor) 0 1px, transparent 1px),
+    /* minor horizontal */
+    linear-gradient(to bottom, var(--grid-minor) 0 1px, transparent 1px);
+  background-size:
+    100px 100px,
+    100px 100px,
+    20px 20px,
+    20px 20px;
+  background-repeat: repeat;
+  background-position: 0 0;
+  -webkit-mask-image: radial-gradient(
+    circle closest-side at center,
+    #000 0%,
+    #000 38%,
+    rgba(0, 0, 0, 0.75) 55%,
+    rgba(0, 0, 0, 0.35) 72%,
+    rgba(0, 0, 0, 0.08) 88%,
+    transparent 100%
+  );
+  mask-image: radial-gradient(
+    circle closest-side at center,
+    #000 0%,
+    #000 38%,
+    rgba(0, 0, 0, 0.75) 55%,
+    rgba(0, 0, 0, 0.35) 72%,
+    rgba(0, 0, 0, 0.08) 88%,
+    transparent 100%
+  );
+  -webkit-mask-size: 100% 100%;
+  mask-size: 100% 100%;
+  -webkit-mask-repeat: no-repeat;
+  mask-repeat: no-repeat;
+}

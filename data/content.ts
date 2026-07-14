@@ -54,11 +54,26 @@ export const aboutAwards = [
 ];
 
 export const aboutClients = [
-  "General Motors",
-  "Bayer",
-  "Siemens",
-  "Volkswagen",
-  "Coca-Cola",
+  {
+    name: "General Motors",
+    logo: "/assets/clients/general-motors.svg",
+  },
+  {
+    name: "Bayer",
+    logo: "/assets/clients/bayer.svg",
+  },
+  {
+    name: "Siemens",
+    logo: "/assets/clients/siemens.svg",
+  },
+  {
+    name: "Volkswagen",
+    logo: "/assets/clients/volkswagen.svg",
+  },
+  {
+    name: "Coca-Cola",
+    logo: "/assets/clients/coca-cola.svg",
+  },
 ];
 
 export const aboutSubpages: AboutSubpage[] = [

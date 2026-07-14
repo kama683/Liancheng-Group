@@ -3,6 +3,7 @@ import { projectsData } from "@/data/projects";
 import { ArrowLink } from "@/components/ui/ArrowLink";
 import { BulletList } from "@/components/ui/BulletList";
 import { Card } from "@/components/ui/Card";
+import { HeroBgImage } from "@/components/ui/HeroBgImage";
 import { ProjectImage } from "@/components/ui/ProjectImage";
 import { Breadcrumb, PageContainer, SectionHeading } from "@/components/ui/SpecTable";
 
@@ -13,16 +14,19 @@ export const metadata: Metadata = {
 export default function ProjectsPage() {
   return (
     <>
-      <PageContainer className="pt-12 pb-6">
-        <Breadcrumb
-          items={[{ label: "Главная", href: "/" }, { label: "Проекты" }]}
-        />
-        <SectionHeading
-          eyebrow="Проекты"
-          title="Реализованные объекты"
-          description={projectsData.heroIntro}
-        />
-      </PageContainer>
+      <section className="relative bg-white overflow-hidden">
+        <HeroBgImage variant="page" />
+        <PageContainer className="relative z-10 pt-12 pb-6">
+          <Breadcrumb
+            items={[{ label: "Главная", href: "/" }, { label: "Проекты" }]}
+          />
+          <SectionHeading
+            eyebrow="Проекты"
+            title="Реализованные объекты"
+            description={projectsData.heroIntro}
+          />
+        </PageContainer>
+      </section>
 
       <PageContainer className="pb-12">
         <div className="grid grid-cols-1 tablet:grid-cols-2 gap-7">

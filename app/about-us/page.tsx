@@ -166,14 +166,24 @@ export default function AboutPage() {
         <p className="text-base leading-relaxed text-muted mt-4 max-w-[720px] mx-auto">
           {clients}
         </p>
-        <div className="flex flex-wrap justify-center items-center gap-x-14 gap-y-10 mt-10">
+        <div className="flex flex-wrap justify-center items-end gap-x-12 gap-y-10 mt-12">
           {aboutClients.map((client) => (
-            <span
-              key={client}
-              className="font-heading font-bold text-lg text-muted-light"
+            <div
+              key={client.name}
+              className="flex flex-col items-center gap-3.5 min-w-[110px]"
             >
-              {client}
-            </span>
+              {/* eslint-disable-next-line @next/next/no-img-element */}
+              <img
+                src={client.logo}
+                alt={client.name}
+                width={120}
+                height={48}
+                className="h-11 w-auto max-w-[130px] object-contain opacity-55 grayscale"
+              />
+              <span className="font-heading font-bold text-lg text-muted-light">
+                {client.name}
+              </span>
+            </div>
           ))}
         </div>
       </PageContainer>

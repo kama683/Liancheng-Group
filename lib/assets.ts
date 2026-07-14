@@ -31,6 +31,12 @@ export const ASSETS = {
     height: 944,
     alt: "Промышленный насос",
   },
+  heroPump: {
+    src: "/assets/pump without background.png",
+    width: 1666,
+    height: 944,
+    alt: "",
+  },
   aboutPhoto: {
     src: "/assets/hero/lainc.jpg",
     width: 1200,
