@@ -17,7 +17,7 @@ import {
 } from "@/lib/site";
 
 export const metadata: Metadata = {
-  title: "Liancheng — Каталог продукции",
+  title: "Bellery — Каталог продукции",
 };
 
 export default function HomePage() {
@@ -63,7 +63,7 @@ export default function HomePage() {
       <PageContainer className="pt-20">
         <SectionHeading
           eyebrow="Продукция"
-          title="Каталог Liancheng Group"
+          title="Каталог Bellery pumps"
           description={CATALOG_INTRO}
           center
         />

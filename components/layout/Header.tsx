@@ -26,9 +26,9 @@ export function Header() {
             priority
           />
           <span className="font-heading font-bold text-base text-body tracking-[1.1px] leading-[1.15]">
-            LIANCHENG
+            BELLERY
             <br />
-            GROUP
+            PUMPS
           </span>
         </Link>
 

@@ -24,7 +24,7 @@ export default function NewsPage() {
       <PageContainer className="py-6 pb-20">
         <p className="text-base leading-relaxed text-muted">
           Раздел новостей находится в разработке. Актуальную информацию о
-          продукции и проектах Liancheng Group можно получить через форму
+          продукции и проектах Bellery pumps можно получить через форму
           обратной связи.
         </p>
       </PageContainer>

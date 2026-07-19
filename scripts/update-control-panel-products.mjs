@@ -6,7 +6,7 @@ const __dirname = path.dirname(fileURLToPath(import.meta.url));
 const catalogPath = path.join(__dirname, "../data/catalog.json");
 const data = JSON.parse(fs.readFileSync(catalogPath, "utf8"));
 
-const SECTION = "ЭЛЕКТРИЧЕСКАЯ ПАНЕЛЬ УПРАВЛЕНИЯ";
+const SECTION = "ЭЛЕКТРИЧЕСКИЕ ШКАФЫ УПРАВЛЕНИЯ";
 const IMAGE_BASE = "/assets/catalog/electric-control-panel";
 const HERO_IMAGE = `${IMAGE_BASE}/Electrical-Control-Panel_1732707241_WNo_4167d4167.png`;
 

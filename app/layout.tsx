@@ -19,8 +19,8 @@ const ptSans = PT_Sans({
 
 export const metadata: Metadata = {
   title: {
-    default: `Liancheng — Каталог продукции`,
-    template: `%s | Liancheng`,
+    default: `Bellery — Каталог продукции`,
+    template: `%s | Bellery`,
   },
   description: COMPANY_NAME,
 };

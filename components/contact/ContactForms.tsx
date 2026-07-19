@@ -117,14 +117,16 @@ export function ContactForms() {
             <div
               id={techPanelId}
               className={cn(
-                "grid transition-[grid-template-rows] duration-500 ease-[cubic-bezier(0.22,1,0.36,1)]",
+                "grid overflow-clip transition-[grid-template-rows] duration-500 ease-[cubic-bezier(0.22,1,0.36,1)]",
                 techOpen ? "grid-rows-[1fr]" : "grid-rows-[0fr]"
               )}
             >
               <div
                 className={cn(
                   "min-h-0",
-                  techOpen ? "overflow-visible" : "overflow-hidden"
+                  techOpen
+                    ? "overflow-visible"
+                    : "overflow-clip [content-visibility:hidden]"
                 )}
               >
                 <div className="pb-2 pt-1">
@@ -254,7 +256,7 @@ export function ContactForms() {
           />
           <ContactInfoCard
             label="Email"
-            html='<a href="mailto:export@liancheng-group.com">export@liancheng-group.com</a>'
+            html='<a href="mailto:export@bellery-pumps.com">export@bellery-pumps.com</a>'
           />
           <ContactInfoCard
             label="Телефон"

@@ -1,12 +1,12 @@
 import type { CatalogNavItem } from "@/lib/types";
 
-export const BRAND = "Liancheng";
-export const COMPANY_NAME = "Shanghai Liancheng (Group) Co., Ltd.";
+export const BRAND = "Bellery";
+export const COMPANY_NAME = "Bellery pumps";
 
 export { LOGO_PATH, HERO_BG_PATH, PRODUCT_IMAGE_PATH } from "@/lib/assets";
 
 export const CATALOG_INTRO =
-  "Liancheng — ведущий производитель насосов в Китае. Продукция широко используется в таких национальных опорных областях, как муниципальное управление, водное хозяйство, строительство, противопожарная защита, электроэнергетика, охрана окружающей среды, нефтяная, химическая промышленность, горнодобывающая промышленность и медицина. Liancheng предоставляет высококачественные решения в области центробежных насосов для предприятий и проектов по всему миру благодаря своему мощному техническому накоплению и возможностям НИОКР.";
+  "Bellery — ведущий производитель насосов в Китае. Продукция широко используется в таких национальных опорных областях, как муниципальное управление, водное хозяйство, строительство, противопожарная защита, электроэнергетика, охрана окружающей среды, нефтяная, химическая промышленность, горнодобывающая промышленность и медицина. Bellery предоставляет высококачественные решения в области центробежных насосов для предприятий и проектов по всему миру благодаря своему мощному техническому накоплению и возможностям НИОКР.";
 
 export const MAIN_NAV = [
   { href: "/", label: "Дом" },
@@ -21,66 +21,52 @@ export type MainNavHref = (typeof MAIN_NAV)[number]["href"];
 export const CATALOG_NAV: CatalogNavItem[] = [
   {
     id: "wastewater-submersible",
-    title: "ПОГРУЖНОЙ НАСОС ДЛЯ СТОЧНЫХ ВОД",
-    label: "Погружной насос для сточных вод",
+    title: "НАСОСЫ, СМЕСИТЕЛИ И ОБОРУДОВАНИЕ ДЛЯ СТОЧНОЙ ВОДЫ",
+    label: "НАСОСЫ, СМЕСИТЕЛИ И ОБОРУДОВАНИЕ ДЛЯ СТОЧНОЙ ВОДЫ",
     category: "pumps",
     page: "/products",
   },
   {
     id: "single-suction-centrifugal",
-    title: "ЦЕНТРОБЕЖНЫЙ НАСОС С ОДНОСТОРОННИМ ВСАСЫВАНИЕМ",
-    label: "Центробежный насос с односторонним всасыванием",
+    title: "ОБЩЕПРОМЫШЛЕННОЕ ПРИМЕНЕНИЕ И СТРОИТЕЛЬСТВО",
+    label: "ОБЩЕПРОМЫШЛЕННОЕ ПРИМЕНЕНИЕ И СТРОИТЕЛЬСТВО",
     category: "pumps",
     page: "/products",
   },
   {
     id: "double-suction-split-case",
-    title: "ВОДЯНОЙ НАСОС С ДВОЙНЫМ ВСАСЫВАНИЕМ И РАЗДЕЛЬНЫМ КОРПУСОМ",
-    label: "Водяной насос с двойным всасыванием и раздельным корпусом",
-    category: "pumps",
-    page: "/products",
-  },
-  {
-    id: "vertical-long-shaft",
-    title: "ВЕРТИКАЛЬНЫЙ НАСОС С ДЛИННЫМ ВАЛОМ",
-    label: "Вертикальный насос с длинным валом",
-    category: "pumps",
-    page: "/products",
-  },
-  {
-    id: "axial-mixed-flow",
-    title: "ОСЕВОЙ ИЛИ ДИАГОНАЛЬНЫЙ НАСОС",
-    label: "Осевой или диагональный насос",
+    title: "ПРОМЫШЛЕННОЕ ПРИМЕНЕНИЕ И СЕЛЬСКОЕ ХОЗЯЙСТВО",
+    label: "ПРОМЫШЛЕННОЕ ПРИМЕНЕНИЕ И СЕЛЬСКОЕ ХОЗЯЙСТВО",
     category: "pumps",
     page: "/products",
   },
   {
     id: "petrochemical",
-    title: "НЕФТЕХИМИЧЕСКИЙ НАСОС",
-    label: "Нефтехимический насос",
+    title: "НЕФТЯНАЯ И ХИМИЧЕСКАЯ ПРОМЫШЛЕННОСТЬ, API610",
+    label: "НЕФТЯНАЯ И ХИМИЧЕСКАЯ ПРОМЫШЛЕННОСТЬ, API610",
     category: "pumps",
     page: "/products",
   },
   {
     id: "control-panel",
-    title: "ЭЛЕКТРИЧЕСКАЯ ПАНЕЛЬ УПРАВЛЕНИЯ",
-    label: "Электрическая панель управления",
+    title: "ЭЛЕКТРИЧЕСКИЕ ШКАФЫ УПРАВЛЕНИЯ",
+    label: "ЭЛЕКТРИЧЕСКИЕ ШКАФЫ УПРАВЛЕНИЯ",
     category: "pumps",
     page: "/products",
   },
   {
     id: "fire-pump",
-    title: "ПОЖАРНЫЙ НАСОС",
-    label: "Пожарный насос",
+    title: "ПОЖАРНОЕ НАСОСНОЕ ОБОРУДОВАНИЕ ПО СТАНДАРТУ FM / UL",
+    label: "ПОЖАРНОЕ НАСОСНОЕ ОБОРУДОВАНИЕ ПО СТАНДАРТУ FM / UL",
     category: "pumps",
     page: "/products",
   },
   {
     id: "water-supply-complete",
-    title: "ПОЛНОЕ ОБОРУДОВАНИЕ ДЛЯ ВОДОСНАБЖЕНИЯ",
-    label: "Полное оборудование для водоснабжения",
-    category: "pumps",
-    page: "/products",
+    title: "МОДУЛЬНЫЕ РЕШЕНИЯ",
+    label: "МОДУЛЬНЫЕ РЕШЕНИЯ",
+    category: "water",
+    page: "/products/water",
   },
   {
     id: "valves",
@@ -89,32 +75,16 @@ export const CATALOG_NAV: CatalogNavItem[] = [
     category: "valves",
     page: "/products/valves",
   },
-  {
-    id: "control",
-    title: "ЭЛЕКТРИЧЕСКИЕ ШКАФЫ УПРАВЛЕНИЯ",
-    label: "Электрические шкафы управления",
-    category: "control",
-    page: "/products/control",
-  },
-  {
-    id: "water-modular",
-    title: "МОДУЛЬНЫЕ РЕШЕНИЯ",
-    label: "Оборудование для водоснабжения (модульные решения)",
-    category: "water",
-    page: "/products/water",
-  },
 ];
 
 export const MAIN_CATEGORIES = [
   { id: "pumps" as const, title: "Насосы", slug: "pumps", route: "/products" },
   { id: "valves" as const, title: "Трубопроводная арматура", slug: "valves", route: "/products/valves" },
-  { id: "control" as const, title: "Электрические шкафы управления", slug: "control", route: "/products/control" },
   { id: "water" as const, title: "Оборудование для водоснабжения", slug: "water", route: "/products/water" },
 ];
 
 export const CATEGORY_ANCHORS: Record<string, string> = {
-  water: "ПОЛНОЕ ОБОРУДОВАНИЕ ДЛЯ ВОДОСНАБЖЕНИЯ",
-  control: "ЭЛЕКТРИЧЕСКАЯ ПАНЕЛЬ УПРАВЛЕНИЯ",
+  water: "МОДУЛЬНЫЕ РЕШЕНИЯ",
   valves: "ТРУБОПРОВОДНАЯ АРМАТУРА",
 };
 

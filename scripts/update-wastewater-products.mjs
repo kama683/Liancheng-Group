@@ -6,7 +6,7 @@ const __dirname = path.dirname(fileURLToPath(import.meta.url));
 const catalogPath = path.join(__dirname, "../data/catalog.json");
 const data = JSON.parse(fs.readFileSync(catalogPath, "utf8"));
 
-const SECTION = "ПОГРУЖНОЙ НАСОС ДЛЯ СТОЧНЫХ ВОД";
+const SECTION = "НАСОСЫ, СМЕСИТЕЛИ И ОБОРУДОВАНИЕ ДЛЯ СТОЧНОЙ ВОДЫ";
 const IMAGE_BASE = "/assets/catalog/submersible-sewage";
 
 const WASTEWATER_PRODUCTS = {
@@ -119,7 +119,7 @@ const WASTEWATER_PRODUCTS = {
     name: "ПОГРУЖНОЙ НАСОС ДЛЯ СТОЧНЫХ ВОД СЕРИИ WQ",
     image: `${IMAGE_BASE}/WQ_1675840180_WNo_800d450.jpg`,
     description: [
-      "Погружной насос для сточных вод серии WQ, разработанный Shanghai Liancheng, вобрал в себя преимущества аналогичной продукции в стране и за рубежом и был всесторонне оптимизирован в гидравлической модели, механической структуре, герметизации, охлаждении, защите и управлении.",
+      "Погружной насос для сточных вод серии WQ, разработанный Bellery, вобрал в себя преимущества аналогичной продукции в стране и за рубежом и был всесторонне оптимизирован в гидравлической модели, механической структуре, герметизации, охлаждении, защите и управлении.",
       "Он имеет хорошие характеристики при выгрузке затвердевших материалов и предотвращении наматывания волокон, высокую эффективность и энергосбережение, а также большие возможности. Оснащенный специально разработанным шкафом управления, он реализует автоматическое управление и обеспечивает безопасную и надежную работу двигателя.",
       "Доступные способы установки: автосцепка, стационарный мокрый монтаж, без установки соединительного устройства, фиксированного мокрого или сухого основания.",
     ],
@@ -141,31 +141,22 @@ const WASTEWATER_PRODUCTS = {
 };
 
 const sectionProducts = [
-  "yw",
-  "wqx",
-  "wq-ii",
+  "wq",
   "wl",
   "wqc",
-  "wq",
+  "wqx",
+  "zw",
+  "yw",
+  "qgls",
+  "qz",
+  "qjb",
 ].map((slug) => {
-  const product = WASTEWATER_PRODUCTS[slug];
+  const product = data.products[slug] ?? WASTEWATER_PRODUCTS[slug];
   return { code: product.code, name: product.name, slug };
 });
 
-for (const [slug, product] of Object.entries(WASTEWATER_PRODUCTS)) {
-  const existing = data.products[slug];
-  data.products[slug] = {
-    ...(existing ?? {}),
-    code: product.code,
-    name: product.name,
-    slug,
-    section: SECTION,
-    category: "pumps",
-    description: product.description,
-    specs: product.specs,
-    applications: product.applications,
-    image: product.image,
-  };
+for (const { slug } of sectionProducts) {
+  data.products[slug].section = SECTION;
 }
 
 const wastewaterSection = data.sections.find((s) => s.title === SECTION);

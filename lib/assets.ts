@@ -5,7 +5,7 @@ export const ASSETS = {
     src: "/assets/logo/chatgpt-image-8-2026-10_24_09-mrc53lj4-removebg-preview.png",
     width: 500,
     height: 500,
-    alt: "Liancheng",
+    alt: "Bellery",
   },
   heroBg: {
     src: "/assets/logo/chatgpt-image-8-2026-10_18_08-mrc55t9q-removebg-preview.png",
@@ -17,7 +17,7 @@ export const ASSETS = {
     src: "/assets/logo/logo-color.png",
     width: 1024,
     height: 1024,
-    alt: "Liancheng",
+    alt: "Bellery",
   },
   logoFaint: {
     src: "/assets/logo/logo-faint.png",
@@ -41,7 +41,7 @@ export const ASSETS = {
     src: "/assets/hero/lainc.jpg",
     width: 1200,
     height: 800,
-    alt: "Shanghai Liancheng (Group) Co., Ltd.",
+    alt: "Bellery pumps",
   },
 } as const;
 

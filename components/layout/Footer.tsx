@@ -8,7 +8,7 @@ import {
   LOGO_PATH,
 } from "@/lib/site";
 
-const CONTACT_EMAIL = "export@liancheng-group.com";
+const CONTACT_EMAIL = "export@bellery-pumps.com";
 const CONTACT_PHONE = "+86 21 XXXX XXXX";
 
 export function Footer() {

@@ -11,13 +11,13 @@ export const aboutStats = [
 ];
 
 export const aboutSubsidiaries = [
-  "Shanghai Liancheng Pump Manufacturing",
-  "Shanghai Liancheng Motor",
-  "Shanghai Liancheng Valve",
-  "Shanghai Liancheng Logistics",
-  "Shanghai Liancheng General Equipment Engineering",
+  "Bellery Pump Manufacturing",
+  "Bellery Motor",
+  "Bellery Valve",
+  "Bellery Logistics",
+  "Bellery General Equipment Engineering",
   "Shanghai Ametek Industrial Equipment",
-  "Shanghai Liancheng Suzhou",
+  "Bellery Suzhou",
 ];
 
 export const aboutEquipment = [
@@ -105,7 +105,7 @@ export const aboutSubpages: AboutSubpage[] = [
 ];
 
 export const genericAboutMessage =
-  "Информация о Shanghai Liancheng (Group) Co., Ltd. доступна в разделе О компании.";
+  "Информация о Bellery pumps доступна в разделе О компании.";
 
 export function getFaqItems(): FaqItem[] {
   const certText =
@@ -114,7 +114,7 @@ export function getFaqItems(): FaqItem[] {
 
   return [
     {
-      question: "Какие категории продукции выпускает Liancheng Group?",
+      question: "Какие категории продукции выпускает Bellery pumps?",
       answer:
         "Насосы, трубопроводная арматура, электрические шкафы управления и оборудование для водоснабжения.",
     },

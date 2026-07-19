@@ -12,7 +12,7 @@ export function HomeCtaSection() {
             Нужна консультация по подбору оборудования?
           </h2>
           <p className="text-base leading-relaxed text-muted mt-4 max-w-[440px] max-tablet:mx-auto">
-            Специалисты Liancheng помогут подобрать насос или систему под ваши
+            Специалисты Bellery помогут подобрать насос или систему под ваши
             параметры — расход, напор, среда и режим эксплуатации.
           </p>
           <Button href="/contact" className="mt-7 max-tablet:mx-auto">

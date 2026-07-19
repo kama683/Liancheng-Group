@@ -6,7 +6,7 @@ const __dirname = path.dirname(fileURLToPath(import.meta.url));
 const catalogPath = path.join(__dirname, "../data/catalog.json");
 const data = JSON.parse(fs.readFileSync(catalogPath, "utf8"));
 
-const SECTION = "ВОДЯНОЙ НАСОС С ДВОЙНЫМ ВСАСЫВАНИЕМ И РАЗДЕЛЬНЫМ КОРПУСОМ";
+const SECTION = "ПРОМЫШЛЕННОЕ ПРИМЕНЕНИЕ И СЕЛЬСКОЕ ХОЗЯЙСТВО";
 const PARKED_SECTION = "ПРОЧИЕ НАСОСЫ";
 const IMAGE_BASE = "/assets/catalog/double-suction-split-case";
 
@@ -88,27 +88,26 @@ const DOUBLE_SUCTION_PRODUCTS = {
   },
 };
 
-const SECTION_ORDER = ["slown", "slow", "slow-2stage"];
+const SECTION_ORDER = [
+  "slow",
+  "slown",
+  "slow-2stage",
+  "slow-multistage",
+  "dg",
+  "sld",
+  "md",
+  "n",
+  "zhlbq",
+  "lpt",
+];
 
 const sectionProducts = SECTION_ORDER.map((slug) => {
-  const product = DOUBLE_SUCTION_PRODUCTS[slug];
+  const product = data.products[slug] ?? DOUBLE_SUCTION_PRODUCTS[slug];
   return { code: product.code, name: product.name, slug };
 });
 
-for (const [slug, product] of Object.entries(DOUBLE_SUCTION_PRODUCTS)) {
-  const existing = data.products[slug];
-  data.products[slug] = {
-    ...(existing ?? {}),
-    code: product.code,
-    name: product.name,
-    slug,
-    section: SECTION,
-    category: "pumps",
-    description: product.description,
-    specs: product.specs,
-    applications: product.applications,
-    image: product.image,
-  };
+for (const { slug } of sectionProducts) {
+  data.products[slug].section = SECTION;
 }
 
 const migrated = new Set(SECTION_ORDER);

@@ -6,10 +6,10 @@ const __dirname = path.dirname(fileURLToPath(import.meta.url));
 const catalogPath = path.join(__dirname, "../data/catalog.json");
 const data = JSON.parse(fs.readFileSync(catalogPath, "utf8"));
 
-const SECTION = "ЦЕНТРОБЕЖНЫЙ НАСОС С ОДНОСТОРОННИМ ВСАСЫВАНИЕМ";
+const SECTION = "ОБЩЕПРОМЫШЛЕННОЕ ПРИМЕНЕНИЕ И СТРОИТЕЛЬСТВО";
 const DOUBLE_SECTION = "ВОДЯНОЙ НАСОС С ДВОЙНЫМ ВСАСЫВАНИЕМ И РАЗДЕЛЬНЫМ КОРПУСОМ";
 const WATER_SECTION = "ПОЛНОЕ ОБОРУДОВАНИЕ ДЛЯ ВОДОСНАБЖЕНИЯ";
-const CONTROL_SECTION = "ЭЛЕКТРИЧЕСКАЯ ПАНЕЛЬ УПРАВЛЕНИЯ";
+const CONTROL_SECTION = "ЭЛЕКТРИЧЕСКИЕ ШКАФЫ УПРАВЛЕНИЯ";
 const IMAGE_BASE = "/assets/catalog/end-suction-centrifugal";
 
 const END_SUCTION_PRODUCTS = {

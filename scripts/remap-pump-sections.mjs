@@ -7,13 +7,13 @@ const catalogPath = path.join(__dirname, "../data/catalog.json");
 const data = JSON.parse(fs.readFileSync(catalogPath, "utf8"));
 
 const SECTION_TITLES = {
-  wastewater: "ПОГРУЖНОЙ НАСОС ДЛЯ СТОЧНЫХ ВОД",
-  singleSuction: "ЦЕНТРОБЕЖНЫЙ НАСОС С ОДНОСТОРОННИМ ВСАСЫВАНИЕМ",
-  doubleSuction: "ВОДЯНОЙ НАСОС С ДВОЙНЫМ ВСАСЫВАНИЕМ И РАЗДЕЛЬНЫМ КОРПУСОМ",
+  wastewater: "НАСОСЫ, СМЕСИТЕЛИ И ОБОРУДОВАНИЕ ДЛЯ СТОЧНОЙ ВОДЫ",
+  singleSuction: "ОБЩЕПРОМЫШЛЕННОЕ ПРИМЕНЕНИЕ И СТРОИТЕЛЬСТВО",
+  doubleSuction: "ПРОМЫШЛЕННОЕ ПРИМЕНЕНИЕ И СЕЛЬСКОЕ ХОЗЯЙСТВО",
   longShaft: "ВЕРТИКАЛЬНЫЙ НАСОС С ДЛИННЫМ ВАЛОМ",
   axial: "ОСЕВОЙ ИЛИ ДИАГОНАЛЬНЫЙ НАСОС",
   petrochemical: "НЕФТЕХИМИЧЕСКИЙ НАСОС",
-  control: "ЭЛЕКТРИЧЕСКАЯ ПАНЕЛЬ УПРАВЛЕНИЯ",
+  control: "ЭЛЕКТРИЧЕСКИЕ ШКАФЫ УПРАВЛЕНИЯ",
   fire: "ПОЖАРНЫЙ НАСОС",
   waterSupply: "ПОЛНОЕ ОБОРУДОВАНИЕ ДЛЯ ВОДОСНАБЖЕНИЯ",
 };
@@ -74,16 +74,16 @@ function classifyPump(product) {
     return SECTION_TITLES.fire;
   }
 
-  if (slug === "lpt") {
-    return SECTION_TITLES.longShaft;
-  }
-
-  if (slug === "qgls" || slug === "zhlbq" || slug === "qz") {
-    return SECTION_TITLES.axial;
-  }
-
-  if (["wq", "wl", "wqc", "wqx", "yw", "wq-ii"].includes(slug)) {
+  if (
+    ["wq", "wl", "wqc", "wqx", "zw", "yw", "qgls", "qz", "qjb"].includes(
+      slug
+    )
+  ) {
     return SECTION_TITLES.wastewater;
+  }
+
+  if (slug === "wq-ii") {
+    return "ПРОЧИЕ НАСОСЫ";
   }
 
   if (
@@ -92,15 +92,10 @@ function classifyPump(product) {
       "sls",
       "slw",
       "gdl",
-      "dg",
-      "sld",
-      "md",
       "slg",
       "ktl",
       "sll",
       "is",
-      "zw",
-      "qjb",
     ].includes(slug)
   ) {
     return SECTION_TITLES.singleSuction;
@@ -132,12 +127,18 @@ function classifyPump(product) {
   }
 
   if (
-    ["slown", "slow", "slow-2stage", "slow-multistage", "s", "n"].includes(
-      slug
-    ) ||
-    code.startsWith("SLO") ||
-    code === "S" ||
-    section.includes("ПРОМЫШЛЕННОЕ ПРИМЕНЕНИЕ")
+    [
+      "slow",
+      "slown",
+      "slow-2stage",
+      "slow-multistage",
+      "dg",
+      "sld",
+      "md",
+      "n",
+      "zhlbq",
+      "lpt",
+    ].includes(slug)
   ) {
     return SECTION_TITLES.doubleSuction;
   }

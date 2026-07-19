@@ -14,7 +14,7 @@ export default function ProductsWaterPage() {
       category="water"
       title="Оборудование для водоснабжения"
       route="/products/water"
-      defaultPanelId="water-modular"
+      defaultPanelId="water-supply-complete"
     />
   );
 }

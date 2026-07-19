@@ -42,7 +42,7 @@ export default function ContactPage() {
           Частые вопросы
         </h2>
         <p className="text-center text-base text-muted mb-9">
-          Ответы на популярные вопросы о сотрудничестве с Liancheng Group
+          Ответы на популярные вопросы о сотрудничестве с Bellery pumps
         </p>
         <div className="contact-faq">
           {faqItems.map((item) => (

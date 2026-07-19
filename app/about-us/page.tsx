@@ -142,7 +142,7 @@ export default function AboutPage() {
           ))}
         </div>
         <p className="text-base leading-relaxed text-muted mt-8">
-          Shangai Liancheng удостоена наград:
+          Bellery pumps удостоена наград:
         </p>
         <div className="mt-5 flex flex-wrap gap-2.5">
           {aboutAwards.map((item) => (
@@ -203,7 +203,7 @@ export default function AboutPage() {
             </Button>
           </div>
           <ProductImage
-            alt="Liancheng industrial pump technical illustration"
+            alt="Bellery industrial pump technical illustration"
             aspectRatio="4/3"
           />
         </div>

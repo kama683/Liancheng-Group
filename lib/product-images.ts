@@ -66,13 +66,10 @@ export const CATEGORY_PANEL_HERO_IMAGES: Record<string, string> = {
   "wastewater-submersible": `${SUBMERSIBLE_SEWAGE_BASE}/submer.png`,
   "single-suction-centrifugal": `${END_SUCTION_BASE}/End-suction-Centrifugal-Pump_1732707241_WNo_4167d4167.png`,
   "double-suction-split-case": `${DOUBLE_SUCTION_BASE}/Double-Suction-Split-Case-Water-Pump_1732707241_WNo_4167d4167.png`,
-  "vertical-long-shaft": `${LONG_SHAFT_BASE}/Vertical-Long-Shaft-Pump_1732707241_WNo_4167d4167.png`,
-  "axial-mixed-flow": `${AXIAL_MIXED_BASE}/111_1732707240_WNo_4167d4167.png`,
   petrochemical: `${OIL_CHEMICAL_BASE}/Petroleum-Chemical-Pump_1732707241_WNo_4167d4167.png`,
   "control-panel": `${CONTROL_PANEL_BASE}/Electrical-Control-Panel_1732707241_WNo_4167d4167.png`,
   "fire-pump": `${FIRE_PUMP_BASE}/Fire-fighting-Pump_1732707241_WNo_4167d4167.png`,
   "water-supply-complete": `${MODULAR_SOLUTIONS_BASE}/Compelete-Water-Supply-Equipment_1732707240_WNo_4167d4167.png`,
-  "water-modular": `${MODULAR_SOLUTIONS_BASE}/Compelete-Water-Supply-Equipment_1732707240_WNo_4167d4167.png`,
 };
 
 export function getCategoryPanelHeroImage(
