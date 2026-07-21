@@ -35,7 +35,7 @@ export default function HomePage() {
         <PageContainer className="relative z-10 py-17 pb-22">
           <div className="max-w-[640px]">
             <div className="inline-block text-xs font-bold tracking-[1.4px] uppercase text-primary bg-[#f4fafc] border border-[#e3f2f7] px-4.5 py-2.5 rounded-pill mb-7">
-              {COMPANY_NAME.toUpperCase()}
+              SHANGHAI LIANCHENG (GROUP) CO., LTD.
             </div>
             <h1 className="font-heading font-bold text-[clamp(36px,4.8vw,56px)] leading-[1.12] text-heading">
               {t("Home.heroPrefix")}{" "}

@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import { Clock } from "lucide-react";
 import { useTranslations } from "next-intl";
 import { ContactForms } from "@/components/contact/ContactForms";
 import { AccordionItem } from "@/components/ui/Accordion";
@@ -29,6 +30,10 @@ export default function ContactPage() {
             <h1 className="font-heading font-bold text-[clamp(36px,4.5vw,52px)] text-heading leading-tight">
               {t("ContactPage.title")}
             </h1>
+            <div className="inline-flex items-center gap-2 rounded-pill bg-primary px-4.5 py-2.5 mt-5 text-sm font-bold text-white shadow-btn">
+              <Clock className="size-4 shrink-0" strokeWidth={2.5} aria-hidden />
+              {t("ContactPage.responseTime")}
+            </div>
             <p className="text-lg leading-relaxed text-muted mt-5">
               {t("ContactPage.intro")}
             </p>
