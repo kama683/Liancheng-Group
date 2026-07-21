@@ -1,11 +1,12 @@
 "use client";
 
 import { useMemo } from "react";
+import { useLocale } from "next-intl";
 import { CatalogLayout } from "@/components/catalog/CatalogLayout";
 import { CatalogPanelProvider, useCatalogPanel } from "@/components/catalog/CatalogPanelContext";
 import { CategoryHeroImage } from "@/components/catalog/CategoryHeroImage";
 import { Breadcrumb, PageContainer } from "@/components/ui/SpecTable";
-import { CATALOG_INTRO } from "@/lib/site";
+import { getCatalogIntro } from "@/lib/catalog";
 import type { CatalogPanel, SearchIndexItem } from "@/lib/types";
 
 interface CatalogPageShellProps {
@@ -59,7 +60,7 @@ function CatalogPageHeader({
 
 export function CatalogPageShell({
   title,
-  intro = CATALOG_INTRO,
+  intro,
   panels,
   searchIndex,
   currentRoute,
@@ -67,13 +68,15 @@ export function CatalogPageShell({
   searchPlaceholder,
   breadcrumb,
 }: CatalogPageShellProps) {
+  const locale = useLocale();
   const panelIds = useMemo(() => panels.map((panel) => panel.id), [panels]);
+  const resolvedIntro = intro ?? getCatalogIntro(locale);
 
   return (
     <CatalogPanelProvider defaultPanelId={defaultPanelId} panelIds={panelIds}>
       <CatalogPageHeader
         title={title}
-        intro={intro}
+        intro={resolvedIntro}
         panels={panels}
         breadcrumb={breadcrumb}
       />

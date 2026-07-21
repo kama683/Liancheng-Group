@@ -13,21 +13,23 @@ export function SpecTable({ specs, className }: SpecTableProps) {
   if (!specs.length) return null;
 
   return (
-    <table className={cn("w-full border-collapse text-[15px]", className)}>
-      <tbody>
-        {specs.map((spec) => {
-          const { key, value } = parseSpecRow(spec);
-          return (
-            <tr key={spec} className="border-b border-border-light">
-              <th className="w-[38%] px-[18px] py-3.5 text-left text-muted font-semibold bg-surface">
-                {key}
-              </th>
-              <td className="px-[18px] py-3.5 text-body font-semibold">{value}</td>
-            </tr>
-          );
-        })}
-      </tbody>
-    </table>
+    <div className="overflow-x-auto">
+      <table className={cn("w-full min-w-115 border-collapse text-[15px]", className)}>
+        <tbody>
+          {specs.map((spec) => {
+            const { key, value } = parseSpecRow(spec);
+            return (
+              <tr key={spec} className="border-b border-border-light">
+                <th className="w-[38%] px-[18px] py-3.5 text-left text-muted font-semibold bg-surface">
+                  {key}
+                </th>
+                <td className="px-[18px] py-3.5 text-body font-semibold">{value}</td>
+              </tr>
+            );
+          })}
+        </tbody>
+      </table>
+    </div>
   );
 }
 
@@ -55,60 +57,6 @@ export function Breadcrumb({ items }: { items: BreadcrumbItem[] }) {
   );
 }
 
-interface StatGridItem {
-  value: string;
-  label: string;
-}
-
-export function StatGrid({
-  items,
-  columns = 4,
-  compact = false,
-}: {
-  items: StatGridItem[];
-  columns?: 4 | 5;
-  compact?: boolean;
-}) {
-  return (
-    <div
-      className={cn(
-        "grid gap-px bg-stat-grid border border-stat-grid rounded-2xl overflow-hidden",
-        columns === 5
-          ? "grid-cols-1 max-tablet:grid-cols-2 tablet:grid-cols-5"
-          : "grid-cols-1 tablet:grid-cols-4",
-        compact && "grid-cols-1 max-tablet:grid-cols-2 tablet:grid-cols-5"
-      )}
-    >
-      {items.map((item) => (
-        <div
-          key={item.label}
-          className={cn(
-            "bg-white",
-            compact ? "px-[18px] py-5.5 text-center" : "px-6 py-7"
-          )}
-        >
-          <div
-            className={cn(
-              "font-heading font-bold text-primary leading-none",
-              compact ? "text-[28px]" : "text-4xl"
-            )}
-          >
-            {item.value}
-          </div>
-          <div
-            className={cn(
-              "text-muted mt-2.5 leading-snug",
-              compact ? "text-[13px] font-semibold text-muted-light" : "text-sm"
-            )}
-          >
-            {item.label}
-          </div>
-        </div>
-      ))}
-    </div>
-  );
-}
-
 export function PageContainer({
   children,
   className,
@@ -121,7 +69,7 @@ export function PageContainer({
   return (
     <div
       className={cn(
-        "mx-auto px-8",
+        "mx-auto px-5 tablet:px-8",
         narrow ? "max-w-[800px]" : "max-w-[var(--container-content)]",
         className
       )}

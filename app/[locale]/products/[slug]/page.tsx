@@ -2,7 +2,7 @@ import type { Metadata } from "next";
 import { notFound } from "next/navigation";
 import { getTranslations } from "next-intl/server";
 import { Link } from "@/i18n/navigation";
-import { Button } from "@/components/ui/Button";
+import { HomeCtaSection } from "@/components/sections/HomeCtaSection";
 import { Eyebrow } from "@/components/ui/Eyebrow";
 import { ProductImage } from "@/components/ui/ProductImage";
 import { ProductCard } from "@/components/ui/ProductCard";
@@ -11,10 +11,10 @@ import {
   getAllProducts,
   getProductBySlug,
   getProductSlugs,
+  hasModelCode,
 } from "@/lib/catalog";
 import { getProductImageSrc } from "@/lib/product-images";
 import { RESERVED_PRODUCT_SLUGS } from "@/lib/site";
-import { COMPANY_NAME } from "@/lib/site";
 
 interface ProductPageProps {
   params: Promise<{ locale: string; slug: string }>;
@@ -30,13 +30,15 @@ export async function generateMetadata({
   params,
 }: ProductPageProps): Promise<Metadata> {
   const { locale, slug } = await params;
-  const product = getProductBySlug(slug);
+  const product = getProductBySlug(slug, locale);
   if (!product) {
     const t = await getTranslations({ locale, namespace: "CategoryPage" });
     return { title: t("pumpsTitle") };
   }
   return {
-    title: `${product.code} — ${product.name}`,
+    title: hasModelCode(product)
+      ? `${product.code} — ${product.name}`
+      : product.name,
   };
 }
 
@@ -45,12 +47,20 @@ export default async function ProductPage({ params }: ProductPageProps) {
   const t = await getTranslations({ locale });
   if (RESERVED_PRODUCT_SLUGS.has(slug)) notFound();
 
-  const product = getProductBySlug(slug);
+  const product = getProductBySlug(slug, locale);
   if (!product) notFound();
 
-  const related = getAllProducts()
-    .filter((p) => p.category === product.category && p.slug !== product.slug)
-    .slice(0, 3);
+  const allProducts = getAllProducts(locale);
+  const sameSection = allProducts.filter(
+    (p) => p.section === product.section && p.slug !== product.slug
+  );
+  const related = (
+    sameSection.length > 0
+      ? sameSection
+      : allProducts.filter(
+          (p) => p.category === product.category && p.slug !== product.slug
+        )
+  ).slice(0, 3);
 
   const categoryHref =
     product.category === "pumps"
@@ -66,11 +76,11 @@ export default async function ProductPage({ params }: ProductPageProps) {
               { label: t("Common.home"), href: "/" },
               { label: t("Common.products"), href: "/products" },
               { label: t("ProductDetail.category"), href: categoryHref },
-              { label: product.code },
+              { label: hasModelCode(product) ? product.code : product.name },
             ]}
           />
-          <Eyebrow>{product.code}</Eyebrow>
-          <h1 className="font-heading font-bold text-[40px] text-heading mt-2.5 leading-tight max-w-[900px]">
+          {hasModelCode(product) && <Eyebrow>{product.code}</Eyebrow>}
+          <h1 className="font-heading font-bold text-[clamp(28px,4.2vw,40px)] text-heading mt-2.5 leading-tight max-w-[900px]">
             {product.name}
           </h1>
         </PageContainer>
@@ -79,7 +89,11 @@ export default async function ProductPage({ params }: ProductPageProps) {
       <PageContainer className="pt-5">
         <div className="grid grid-cols-1 tablet:grid-cols-2 gap-12 items-start">
           <ProductImage
-            alt={`${product.code} — ${product.name} product photo`}
+            alt={
+              hasModelCode(product)
+                ? `${product.code} — ${product.name} product photo`
+                : `${product.name} product photo`
+            }
             src={getProductImageSrc(product)}
             aspectRatio="4/3"
           />
@@ -118,28 +132,14 @@ export default async function ProductPage({ params }: ProductPageProps) {
         )}
       </PageContainer>
 
-      <PageContainer className="pt-16">
-        <div className="rounded-2xl bg-gradient-to-br from-primary to-primary-dark p-12 flex items-center justify-between gap-6 flex-wrap">
-          <div>
-            <h2 className="font-heading font-bold text-[26px] text-white">
-              {COMPANY_NAME}
-            </h2>
-            <p className="text-base text-[#d3eef6] mt-2.5">
-              {t("Common.headquartersNote")}
-            </p>
-          </div>
-          <Button href="/contact" variant="white">
-            {t("Nav.contacts")}
-          </Button>
-        </div>
-      </PageContainer>
+      <HomeCtaSection />
 
       {related.length > 0 && (
         <PageContainer className="py-16 pb-20">
           <h2 className="font-heading font-bold text-[28px] text-heading mb-6">
             {t("ProductDetail.relatedTitle")}
           </h2>
-          <div className="grid grid-cols-1 max-tablet:grid-cols-2 tablet:grid-cols-3 gap-6">
+          <div className="grid grid-cols-1 max-tablet:grid-cols-2 tablet:grid-cols-3 gap-6 max-mobile:grid-cols-1">
             {related.map((item) => (
               <ProductCard key={item.slug} product={item} />
             ))}

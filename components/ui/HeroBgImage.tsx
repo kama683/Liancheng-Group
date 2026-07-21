@@ -5,7 +5,7 @@ import { cn } from "@/lib/utils";
 type HeroBgVariant = "page" | "catalog" | "home" | "contact";
 
 const variantClasses: Record<"page" | "catalog", string> = {
-  page: "absolute -right-[60px] top-1/2 -translate-y-1/2 w-[min(820px,62vw)] h-auto object-contain opacity-[0.34] z-0 pointer-events-none max-tablet:-right-[120px] max-tablet:opacity-[0.22] max-tablet:w-[min(680px,95vw)]",
+  page: "absolute -right-[-180px] top-1/2 -translate-y-1/2 w-[min(360px,40vw)] h-auto object-contain opacity-[0.34] z-0 pointer-events-none max-tablet:-right-[120px] max-tablet:opacity-[0.22] max-tablet:w-[min(420px,60vw)]",
   catalog:
     "absolute -right-[30px] top-1/2 -translate-y-1/2 w-[min(520px,75%)] h-auto object-contain opacity-45 pointer-events-none",
 };
@@ -40,6 +40,10 @@ function PumpHeroBackdrop({
       className={cn(
         sizes.frame,
         "z-0 pointer-events-none flex items-center justify-center",
+        // On the home hero, the pump illustration sits behind a single-column text
+        // block below the `tablet` breakpoint and overlaps/clutters the copy, so it's
+        // hidden on mobile/tablet and only shown once the two-column desktop layout applies.
+        layout === "home" && "max-tablet:hidden",
         className
       )}
       aria-hidden
@@ -81,7 +85,7 @@ export function HeroBgImage({
     );
   }
 
-  const asset = ASSETS.heroBg;
+  const asset = variant === "page" ? ASSETS.logoBackground : ASSETS.heroBg;
 
   return (
     <Image

@@ -1,4 +1,7 @@
+"use client";
+
 import Image from "next/image";
+import { useEffect, useRef, useState } from "react";
 import { ASSETS } from "@/lib/assets";
 import { cn } from "@/lib/utils";
 
@@ -16,6 +19,12 @@ export function ProjectImage({
   aspectRatio = "16/10",
 }: ProjectImageProps) {
   const hasPhoto = Boolean(src);
+  const imgRef = useRef<HTMLImageElement>(null);
+  const [loaded, setLoaded] = useState(false);
+
+  useEffect(() => {
+    if (imgRef.current?.complete) setLoaded(true);
+  }, []);
 
   return (
     <div
@@ -23,13 +32,27 @@ export function ProjectImage({
       style={{ aspectRatio }}
     >
       {hasPhoto ? (
-        <Image
-          src={src!}
-          alt={alt}
-          fill
-          sizes="(max-width: 900px) 100vw, 50vw"
-          className="object-cover transition-transform duration-400 ease-out group-hover:scale-105"
-        />
+        <>
+          <div
+            aria-hidden
+            className={cn(
+              "absolute inset-0 bg-surface transition-opacity duration-300",
+              loaded ? "opacity-0" : "opacity-100 animate-pulse"
+            )}
+          />
+          <Image
+            ref={imgRef}
+            src={src!}
+            alt={alt}
+            fill
+            sizes="(max-width: 900px) 100vw, 50vw"
+            onLoad={() => setLoaded(true)}
+            className={cn(
+              "object-cover transition-[opacity,transform] duration-400 ease-out group-hover:scale-105",
+              loaded ? "opacity-100" : "opacity-0"
+            )}
+          />
+        </>
       ) : (
         <Image
           src={ASSETS.pump.src}

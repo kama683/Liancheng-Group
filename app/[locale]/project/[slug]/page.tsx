@@ -2,11 +2,8 @@ import type { Metadata } from "next";
 import { notFound } from "next/navigation";
 import { getTranslations } from "next-intl/server";
 import { Link } from "@/i18n/navigation";
-import {
-  getProjectBySlug,
-  getProjectSlugs,
-  projectsData,
-} from "@/data/projects";
+import { getProjectBySlug, getProjectSlugs, getProjectsData } from "@/data/projects";
+import type { AppLocale } from "@/i18n/routing";
 import { getProductsBySlugs } from "@/lib/catalog";
 import { ProjectEquipmentSection } from "@/components/projects/ProjectEquipmentSection";
 import { ProjectImage } from "@/components/ui/ProjectImage";
@@ -25,7 +22,7 @@ export async function generateMetadata({
   params,
 }: ProjectPageProps): Promise<Metadata> {
   const { locale, slug } = await params;
-  const project = getProjectBySlug(slug);
+  const project = getProjectBySlug(slug, locale as AppLocale);
   if (project) return { title: project.name };
   const t = await getTranslations({ locale, namespace: "Nav" });
   return { title: t("projects") };
@@ -34,7 +31,9 @@ export async function generateMetadata({
 export default async function ProjectDetailPage({ params }: ProjectPageProps) {
   const { locale, slug } = await params;
   const t = await getTranslations({ locale });
-  const project = getProjectBySlug(slug);
+  const appLocale = locale as AppLocale;
+  const projectsData = getProjectsData(appLocale);
+  const project = getProjectBySlug(slug, appLocale);
   if (!project) notFound();
 
   const index = projectsData.featured.findIndex((p) => p.slug === slug);
@@ -43,7 +42,7 @@ export default async function ProjectDetailPage({ params }: ProjectPageProps) {
     index < projectsData.featured.length - 1
       ? projectsData.featured[index + 1]
       : null;
-  const equipmentProducts = getProductsBySlugs(project.equipmentSlugs);
+  const equipmentProducts = getProductsBySlugs(project.equipmentSlugs, appLocale);
 
   return (
     <>

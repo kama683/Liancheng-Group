@@ -32,7 +32,7 @@ export default function ApplicationsPage() {
           <div className="text-[13px] font-bold tracking-[1.5px] uppercase text-primary mt-6">
             {t("Applications.breadcrumbLabel")}
           </div>
-          <h1 className="font-heading font-bold text-[42px] text-heading mt-2.5">
+          <h1 className="font-heading font-bold text-[clamp(28px,4.5vw,42px)] text-heading mt-2.5 leading-tight">
             {t("Applications.title")}
           </h1>
           <p className="text-base leading-relaxed text-muted mt-5 max-w-[880px]">

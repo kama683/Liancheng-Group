@@ -27,7 +27,7 @@ export default function WaterWastewaterPage() {
               { label: t("Applications.waterWastewaterLink") },
             ]}
           />
-          <h1 className="font-heading font-bold text-[42px] text-heading mt-6">
+          <h1 className="font-heading font-bold text-[clamp(28px,4.5vw,42px)] text-heading mt-6 leading-tight">
             {t("Applications.waterWastewaterLink")}
           </h1>
         </PageContainer>

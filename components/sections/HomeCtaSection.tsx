@@ -21,13 +21,17 @@ export function HomeCtaSection() {
             {t("button")}
           </Button>
         </div>
-        <div className="flex items-center justify-center max-tablet:order-first">
+        <div className="relative flex items-center justify-center max-tablet:order-first">
+          <div
+            aria-hidden
+            className="hero-blueprint-grid absolute left-1/2 top-1/2 aspect-square w-[min(420px,90%)] -translate-x-1/2 -translate-y-1/2"
+          />
           <Image
-            src={ASSETS.pump.src}
+            src={ASSETS.heroPump.src}
             alt={ASSETS.pump.alt}
-            width={ASSETS.pump.width}
-            height={ASSETS.pump.height}
-            className="w-[min(380px,100%)] h-auto object-contain opacity-90"
+            width={ASSETS.heroPump.width}
+            height={ASSETS.heroPump.height}
+            className="relative z-1 w-[min(420px,100%)] h-auto object-contain opacity-90"
           />
         </div>
       </div>

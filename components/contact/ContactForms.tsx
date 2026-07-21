@@ -328,7 +328,7 @@ function DirectContacts() {
           {t("description")}
         </p>
       </div>
-      <div className="grid grid-cols-1 max-tablet:grid-cols-2 tablet:grid-cols-4 gap-4">
+      <div className="grid grid-cols-1 max-tablet:grid-cols-2 tablet:grid-cols-4 gap-4 max-mobile:grid-cols-1">
         <ContactInfoCard
           icon="office"
           label={t("address.label")}

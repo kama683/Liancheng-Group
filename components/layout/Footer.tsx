@@ -19,7 +19,7 @@ export function Footer() {
 
   return (
     <footer className="bg-footer text-footer-text">
-      <div className="max-w-[var(--container-content)] mx-auto px-8 pt-16 pb-10">
+      <div className="max-w-[var(--container-content)] mx-auto px-5 tablet:px-8 pt-12 tablet:pt-16 pb-10">
         <div className="grid grid-cols-1 tablet:grid-cols-5 gap-10">
           <div className="tablet:col-span-1">
             <div className="flex items-center gap-3">

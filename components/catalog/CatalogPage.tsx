@@ -1,4 +1,4 @@
-import { useTranslations } from "next-intl";
+import { useLocale, useTranslations } from "next-intl";
 import { CatalogPageShell } from "@/components/catalog/CatalogPageShell";
 import {
   buildCatalogPanels,
@@ -21,8 +21,9 @@ function CatalogPageView({
 }: {
   config: CatalogPageConfig;
 }) {
-  const panels = buildCatalogPanels(config.categoryFilter);
-  const searchIndex = getSearchIndex(config.categoryFilter);
+  const locale = useLocale();
+  const panels = buildCatalogPanels(config.categoryFilter, locale);
+  const searchIndex = getSearchIndex(config.categoryFilter, locale);
   const defaultPanelId =
     panels.find((p) => p.id === config.defaultPanelId)?.id ??
     panels[0]?.id ??

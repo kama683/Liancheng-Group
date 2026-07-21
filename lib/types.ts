@@ -40,7 +40,7 @@ export interface CatalogPanel extends CatalogNavItem {
 }
 
 export interface CatalogData {
-  company: string[];
+  company: Record<string, string[]>;
   sections: CatalogSection[];
   products: Record<string, ProductDetail>;
 }
@@ -48,11 +48,9 @@ export interface CatalogData {
 export interface ProjectFeatured {
   slug: string;
   name: string;
-  fragment: string;
   industry: string;
   location: string;
   image: string;
-  imageTodo: string;
   equipmentSlugs: string[];
   equipmentType: "building" | "industrial";
   features: string;
@@ -89,7 +87,6 @@ export interface FaqItem {
 
 export interface AboutSubpage {
   slug: string;
-  title: string;
   paragraphs: string[];
 }
 

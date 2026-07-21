@@ -5,7 +5,9 @@
     "catalog": "Catalog",
     "projects": "Projects",
     "contacts": "Contacts",
-    "contactCta": "Contact Us"
+    "contactCta": "Contact Us",
+    "openMenu": "Open menu",
+    "closeMenu": "Close menu"
   },
   "Footer": {
     "navigationHeading": "Navigation",
@@ -127,15 +129,15 @@
     "headquartersNote": "Headquarters is located in Fengbang Industrial Park, Shanghai."
   },
   "CatalogNav": {
-    "wastewater-submersible": "SUBMERSIBLE SEWAGE PUMPS, MIXERS AND EQUIPMENT",
-    "single-suction-centrifugal": "GENERAL INDUSTRIAL APPLICATIONS AND CONSTRUCTION",
-    "double-suction-split-case": "INDUSTRIAL APPLICATIONS AND AGRICULTURE",
-    "petrochemical": "OIL AND CHEMICAL INDUSTRY, API610",
-    "control-panel": "ELECTRICAL CONTROL PANELS",
-    "fire-pump": "FIRE PUMP EQUIPMENT TO FM / UL STANDARD",
-    "water-supply-complete": "MODULAR SOLUTIONS",
-    "valves": "PIPELINE VALVES",
-    "valvesFooterLabel": "Pipeline Valves"
+    "wastewater-submersible": "Submersible sewage pumps, mixers and equipment",
+    "single-suction-centrifugal": "General industrial applications and construction",
+    "double-suction-split-case": "Industrial applications and agriculture",
+    "petrochemical": "Oil and chemical industry, API610",
+    "control-panel": "Electrical control panels",
+    "fire-pump": "Fire pump equipment to FM / UL standard",
+    "water-supply-complete": "Modular solutions",
+    "valves": "Pipeline valves",
+    "valvesFooterLabel": "Pipeline valves"
   },
   "Faq": {
     "title": "Frequently Asked Questions"

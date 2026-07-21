@@ -22,56 +22,56 @@ export type MainNavHref = (typeof MAIN_NAV)[number]["href"];
 export const CATALOG_NAV: CatalogNavItem[] = [
   {
     id: "wastewater-submersible",
-    title: "НАСОСЫ, СМЕСИТЕЛИ И ОБОРУДОВАНИЕ ДЛЯ СТОЧНОЙ ВОДЫ",
-    label: "НАСОСЫ, СМЕСИТЕЛИ И ОБОРУДОВАНИЕ ДЛЯ СТОЧНОЙ ВОДЫ",
+    title: "Насосы, смесители и оборудование для сточной воды",
+    label: "Насосы, смесители и оборудование для сточной воды",
     category: "pumps",
     page: "/products",
   },
   {
     id: "single-suction-centrifugal",
-    title: "ОБЩЕПРОМЫШЛЕННОЕ ПРИМЕНЕНИЕ И СТРОИТЕЛЬСТВО",
-    label: "ОБЩЕПРОМЫШЛЕННОЕ ПРИМЕНЕНИЕ И СТРОИТЕЛЬСТВО",
+    title: "Общепромышленное применение и строительство",
+    label: "Общепромышленное применение и строительство",
     category: "pumps",
     page: "/products",
   },
   {
     id: "double-suction-split-case",
-    title: "ПРОМЫШЛЕННОЕ ПРИМЕНЕНИЕ И СЕЛЬСКОЕ ХОЗЯЙСТВО",
-    label: "ПРОМЫШЛЕННОЕ ПРИМЕНЕНИЕ И СЕЛЬСКОЕ ХОЗЯЙСТВО",
+    title: "Промышленное применение и сельское хозяйство",
+    label: "Промышленное применение и сельское хозяйство",
     category: "pumps",
     page: "/products",
   },
   {
     id: "petrochemical",
-    title: "НЕФТЯНАЯ И ХИМИЧЕСКАЯ ПРОМЫШЛЕННОСТЬ, API610",
-    label: "НЕФТЯНАЯ И ХИМИЧЕСКАЯ ПРОМЫШЛЕННОСТЬ, API610",
+    title: "Нефтяная и химическая промышленность, API610",
+    label: "Нефтяная и химическая промышленность, API610",
     category: "pumps",
     page: "/products",
   },
   {
     id: "control-panel",
-    title: "ЭЛЕКТРИЧЕСКИЕ ШКАФЫ УПРАВЛЕНИЯ",
-    label: "ЭЛЕКТРИЧЕСКИЕ ШКАФЫ УПРАВЛЕНИЯ",
+    title: "Электрические шкафы управления",
+    label: "Электрические шкафы управления",
     category: "pumps",
     page: "/products",
   },
   {
     id: "fire-pump",
-    title: "ПОЖАРНОЕ НАСОСНОЕ ОБОРУДОВАНИЕ ПО СТАНДАРТУ FM / UL",
-    label: "ПОЖАРНОЕ НАСОСНОЕ ОБОРУДОВАНИЕ ПО СТАНДАРТУ FM / UL",
+    title: "Пожарное насосное оборудование по стандарту FM / UL",
+    label: "Пожарное насосное оборудование по стандарту FM / UL",
     category: "pumps",
     page: "/products",
   },
   {
     id: "water-supply-complete",
-    title: "МОДУЛЬНЫЕ РЕШЕНИЯ",
-    label: "МОДУЛЬНЫЕ РЕШЕНИЯ",
+    title: "Модульные решения",
+    label: "Модульные решения",
     category: "water",
     page: "/products/water",
   },
   {
     id: "valves",
-    title: "ТРУБОПРОВОДНАЯ АРМАТУРА",
+    title: "Трубопроводная арматура",
     label: "Трубопроводная арматура",
     category: "valves",
     page: "/products/valves",
@@ -90,13 +90,40 @@ export const CATEGORY_ANCHORS: Record<string, string> = {
   valves: "valves",
 };
 
-export const HOME_STATS = [
-  { value: "5", label: "промышленных парков" },
-  { value: "550 000", label: "м² производственных площадей" },
-  { value: "2000+", label: "комплектов оборудования" },
-  { value: "30+", label: "филиалов" },
-  { value: "1800+", label: "специалистов продаж и сервиса" },
-];
+const HOME_STATS: Record<string, { value: string; label: string }[]> = {
+  ru: [
+    { value: "5", label: "промышленных парков" },
+    { value: "550 000", label: "м² производственных площадей" },
+    { value: "2000+", label: "комплектов оборудования" },
+    { value: "30+", label: "филиалов" },
+    { value: "1800+", label: "специалистов продаж и сервиса" },
+  ],
+  kk: [
+    { value: "5", label: "индустриялық парк" },
+    { value: "550 000", label: "м² өндірістік алаң" },
+    { value: "2000+", label: "жабдық жинағы" },
+    { value: "30+", label: "филиал" },
+    { value: "1800+", label: "сату және сервис маманы" },
+  ],
+  en: [
+    { value: "5", label: "industrial parks" },
+    { value: "550,000", label: "m² of production space" },
+    { value: "2,000+", label: "sets of equipment" },
+    { value: "30+", label: "branches" },
+    { value: "1,800+", label: "sales and service specialists" },
+  ],
+  zh: [
+    { value: "5", label: "工业园区" },
+    { value: "550,000", label: "m² 生产面积" },
+    { value: "2,000+", label: "台（套）设备" },
+    { value: "30+", label: "分支机构" },
+    { value: "1,800+", label: "销售与服务专家" },
+  ],
+};
+
+export function getHomeStats(locale: string) {
+  return HOME_STATS[locale] ?? HOME_STATS.ru;
+}
 
 export const HOME_FEATURED_PRODUCTS = ["sls", "slw", "gdl", "slg", "wq", "wqc"];
 

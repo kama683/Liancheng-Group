@@ -7,7 +7,46 @@ import { usePathname, useRouter } from "@/i18n/navigation";
 import { routing } from "@/i18n/routing";
 import { cn } from "@/lib/utils";
 
-export function LanguageSwitcher() {
+interface LanguageSwitcherProps {
+  /** Renders every locale as a flat row instead of a popup dropdown — use this inside
+   * containers with `overflow-hidden` (e.g. an animated collapse panel), since an
+   * absolutely-positioned dropdown would otherwise get clipped by that ancestor. */
+  inline?: boolean;
+}
+
+export function LanguageSwitcher({ inline = false }: LanguageSwitcherProps) {
+  const t = useTranslations("LanguageSwitcher");
+  const locale = useLocale();
+  const pathname = usePathname();
+  const router = useRouter();
+
+  if (inline) {
+    return (
+      <div className="flex flex-wrap items-center gap-1.5 text-sm font-semibold">
+        {routing.locales.map((loc) => (
+          <button
+            key={loc}
+            type="button"
+            aria-current={loc === locale ? "true" : undefined}
+            onClick={() => router.replace(pathname, { locale: loc })}
+            className={cn(
+              "rounded-md px-3 py-2 transition-colors cursor-pointer",
+              loc === locale
+                ? "bg-pill-blue-bg text-primary"
+                : "text-nav hover:bg-surface hover:text-primary"
+            )}
+          >
+            {t(loc)}
+          </button>
+        ))}
+      </div>
+    );
+  }
+
+  return <LanguageDropdown />;
+}
+
+function LanguageDropdown() {
   const t = useTranslations("LanguageSwitcher");
   const locale = useLocale();
   const pathname = usePathname();
@@ -42,7 +81,7 @@ export function LanguageSwitcher() {
         onClick={() => setOpen((v) => !v)}
         aria-haspopup="listbox"
         aria-expanded={open}
-        className="flex items-center gap-1.5 rounded-sm px-2 py-1 text-nav transition-colors hover:text-primary cursor-pointer"
+        className="flex items-center gap-1.5 rounded-sm px-2 py-2.5 tablet:py-1 text-nav transition-colors hover:text-primary cursor-pointer"
       >
         {t(locale)}
         <ChevronDown
@@ -75,7 +114,7 @@ export function LanguageSwitcher() {
               router.replace(pathname, { locale: loc });
             }}
             className={cn(
-              "block w-full cursor-pointer px-3.5 py-2 text-left transition-colors",
+              "block w-full cursor-pointer px-3.5 py-2.5 text-left transition-colors",
               loc === locale
                 ? "bg-pill-blue-bg text-primary"
                 : "text-nav hover:bg-surface hover:text-primary"

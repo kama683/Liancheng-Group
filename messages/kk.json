@@ -5,7 +5,9 @@
     "catalog": "Каталог",
     "projects": "Жобалар",
     "contacts": "Байланыс",
-    "contactCta": "Байланысу"
+    "contactCta": "Байланысу",
+    "openMenu": "Мәзірді ашу",
+    "closeMenu": "Мәзірді жабу"
   },
   "Footer": {
     "navigationHeading": "Шарлау",
@@ -127,14 +129,14 @@
     "headquartersNote": "Бас офис Фэнбань индустриялық паркінде, Шанхайда орналасқан."
   },
   "CatalogNav": {
-    "wastewater-submersible": "СТОҚ СУЛАРЫНА АРНАЛҒАН СОРҒЫЛАР, АРАЛАСТЫРҒЫШТАР ЖӘНЕ ЖАБДЫҚ",
-    "single-suction-centrifugal": "ЖАЛПЫ ӨНЕРКӘСІПТІК ҚОЛДАНЫС ЖӘНЕ ҚҰРЫЛЫС",
-    "double-suction-split-case": "ӨНЕРКӘСІПТІК ҚОЛДАНЫС ЖӘНЕ АУЫЛ ШАРУАШЫЛЫҒЫ",
-    "petrochemical": "МҰНАЙ ЖӘНЕ ХИМИЯ ӨНЕРКӘСІБІ, API610",
-    "control-panel": "ЭЛЕКТРЛІК БАСҚАРУ ШКАФТАРЫ",
-    "fire-pump": "FM / UL СТАНДАРТЫ БОЙЫНША ӨРТ СӨНДІРУ СОРҒЫ ЖАБДЫҒЫ",
-    "water-supply-complete": "МОДУЛЬДІК ШЕШІМДЕР",
-    "valves": "ҚҰБЫР АРМАТУРАСЫ",
+    "wastewater-submersible": "Стоқ суларына арналған сорғылар, араластырғыштар және жабдық",
+    "single-suction-centrifugal": "Жалпы өнеркәсіптік қолданыс және құрылыс",
+    "double-suction-split-case": "Өнеркәсіптік қолданыс және ауыл шаруашылығы",
+    "petrochemical": "Мұнай және химия өнеркәсібі, API610",
+    "control-panel": "Электрлік басқару шкафтары",
+    "fire-pump": "FM / UL стандарты бойынша өрт сөндіру сорғы жабдығы",
+    "water-supply-complete": "Модульдік шешімдер",
+    "valves": "Құбыр арматурасы",
     "valvesFooterLabel": "Құбыр арматурасы"
   },
   "Faq": {

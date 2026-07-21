@@ -19,7 +19,7 @@ export default function NewsPage() {
           <div className="text-[13px] font-bold tracking-[1.5px] uppercase text-primary mt-6">
             {t("News.label")}
           </div>
-          <h1 className="font-heading font-bold text-[42px] text-heading mt-2.5">
+          <h1 className="font-heading font-bold text-[clamp(28px,4.5vw,42px)] text-heading mt-2.5 leading-tight">
             {t("News.title")}
           </h1>
         </PageContainer>

@@ -3,6 +3,7 @@ import { ArrowLink } from "@/components/ui/ArrowLink";
 import { Card } from "@/components/ui/Card";
 import { Eyebrow } from "@/components/ui/Eyebrow";
 import { ProductImage } from "@/components/ui/ProductImage";
+import { hasModelCode } from "@/lib/catalog";
 import { getProductImageSrc } from "@/lib/product-images";
 import type { ProductDetail } from "@/lib/types";
 
@@ -19,13 +20,15 @@ export function ProjectEquipmentCard({ product }: ProjectEquipmentCardProps) {
       className="flex h-full flex-col hover:shadow-card-sm"
     >
       <ProductImage
-        alt={`${product.code} — ${product.name}`}
+        alt={product.name}
         src={getProductImageSrc(product)}
         aspectRatio="1/1"
         sizes="(max-width: 900px) 50vw, 22vw"
       />
       <div className="flex flex-1 flex-col p-3.5 pb-4">
-        <Eyebrow className="mb-1 text-[11px]">{product.code}</Eyebrow>
+        {hasModelCode(product) && (
+          <Eyebrow className="mb-1 text-[11px]">{product.code}</Eyebrow>
+        )}
         <h3 className="font-heading font-bold text-[13px] text-body leading-snug line-clamp-3 flex-1">
           {product.name}
         </h3>

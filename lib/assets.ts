@@ -13,6 +13,12 @@ export const ASSETS = {
     height: 500,
     alt: "",
   },
+  logoBackground: {
+    src: "/assets/logo/background logo.png",
+    width: 1024,
+    height: 1536,
+    alt: "",
+  },
   logoColor: {
     src: "/assets/logo/logo-color.png",
     width: 1024,

@@ -6,6 +6,7 @@ import { getTranslations, setRequestLocale } from "next-intl/server";
 import { Manrope, Noto_Sans_SC, PT_Sans } from "next/font/google";
 import { Header } from "@/components/layout/Header";
 import { Footer } from "@/components/layout/Footer";
+import { RouteProgressBar } from "@/components/layout/RouteProgressBar";
 import { routing } from "@/i18n/routing";
 import { COMPANY_NAME } from "@/lib/site";
 import "../globals.css";
@@ -67,6 +68,7 @@ export default async function RootLayout({
     >
       <body>
         <NextIntlClientProvider>
+          <RouteProgressBar />
           <Header />
           <main>{children}</main>
           <Footer />
