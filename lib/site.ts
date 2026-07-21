@@ -8,12 +8,13 @@ export { LOGO_PATH, HERO_BG_PATH, PRODUCT_IMAGE_PATH } from "@/lib/assets";
 export const CATALOG_INTRO =
   "Bellery — ведущий производитель насосов в Китае. Продукция широко используется в таких национальных опорных областях, как муниципальное управление, водное хозяйство, строительство, противопожарная защита, электроэнергетика, охрана окружающей среды, нефтяная, химическая промышленность, горнодобывающая промышленность и медицина. Bellery предоставляет высококачественные решения в области центробежных насосов для предприятий и проектов по всему миру благодаря своему мощному техническому накоплению и возможностям НИОКР.";
 
+// labelKey refers to the "Nav" message namespace (see messages/*.json).
 export const MAIN_NAV = [
-  { href: "/", label: "Дом" },
-  { href: "/about-us", label: "О компании" },
-  { href: "/products", label: "Каталог" },
-  { href: "/projects", label: "Проекты" },
-  { href: "/contact", label: "Контакты" },
+  { href: "/", labelKey: "home" },
+  { href: "/about-us", labelKey: "aboutUs" },
+  { href: "/products", labelKey: "catalog" },
+  { href: "/projects", labelKey: "projects" },
+  { href: "/contact", labelKey: "contacts" },
 ] as const;
 
 export type MainNavHref = (typeof MAIN_NAV)[number]["href"];
@@ -83,9 +84,10 @@ export const MAIN_CATEGORIES = [
   { id: "water" as const, title: "Оборудование для водоснабжения", slug: "water", route: "/products/water" },
 ];
 
+// Values are CatalogNavItem/CatalogSection ids (language-neutral), not display text.
 export const CATEGORY_ANCHORS: Record<string, string> = {
-  water: "МОДУЛЬНЫЕ РЕШЕНИЯ",
-  valves: "ТРУБОПРОВОДНАЯ АРМАТУРА",
+  water: "water-supply-complete",
+  valves: "valves",
 };
 
 export const HOME_STATS = [
@@ -97,14 +99,5 @@ export const HOME_STATS = [
 ];
 
 export const HOME_FEATURED_PRODUCTS = ["sls", "slw", "gdl", "slg", "wq", "wqc"];
-
-export const HOME_PROJECTS_PREVIEW = [
-  "Столичный аэропорт",
-  "Шанхайский международный аэропорт Хунцяо",
-  "Шанхайский сад Луцзяцзуй",
-  "Сад Гуандун Цзядуо",
-  "Второй дом социального обеспечения в Шанхае",
-  "Шанхайский центр Керри",
-];
 
 export const RESERVED_PRODUCT_SLUGS = new Set(["pumps", "valves", "control", "water"]);

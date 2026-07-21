@@ -10,6 +10,7 @@ const OIL_CHEMICAL_BASE = "/assets/catalog/oil-chemical-pump";
 const CONTROL_PANEL_BASE = "/assets/catalog/electric-control-panel";
 const FIRE_PUMP_BASE = "/assets/catalog/fire-extinguishing-pump";
 const MODULAR_SOLUTIONS_BASE = "/assets/catalog/modular-solutions";
+const CATALOG_ROOT_BASE = "/assets/catalog";
 
 /** Product slug → catalog image path. */
 export const PRODUCT_IMAGE_BY_SLUG: Record<string, string> = {
@@ -33,6 +34,7 @@ export const PRODUCT_IMAGE_BY_SLUG: Record<string, string> = {
   slown: `${DOUBLE_SUCTION_BASE}/SLOWN.jpeg`,
   slow: `${DOUBLE_SUCTION_BASE}/SLO-SLOW.jpg`,
   "slow-2stage": `${DOUBLE_SUCTION_BASE}/SLOW.jpg`,
+  "slow-multistage": `${CATALOG_ROOT_BASE}/SLOW.png`,
   slda: `${OIL_CHEMICAL_BASE}/SLDA-BB1_1677374780_WNo_800d450.jpg`,
   ly: `${OIL_CHEMICAL_BASE}/LY-VS1.png`,
   ayg: `${OIL_CHEMICAL_BASE}/AYG-OH3.png`,
@@ -42,11 +44,19 @@ export const PRODUCT_IMAGE_BY_SLUG: Record<string, string> = {
   slza: `${OIL_CHEMICAL_BASE}/SLZA-2-_1675845529_WNo_800d450.jpg`,
   slcz: `${OIL_CHEMICAL_BASE}/SLCZ_1677375071_WNo_800d450.jpg`,
   slmc: `${OIL_CHEMICAL_BASE}/SLMC-BB4_1677375226_WNo_800d450.jpg`,
-  lec: `${CONTROL_PANEL_BASE}/Electrical-Control-Panel_1732707241_WNo_4167d4167.png`,
-  lbp: `${CONTROL_PANEL_BASE}/Electrical-Control-Panel_1732707241_WNo_4167d4167.png`,
-  "hv-control-cabinet": `${CONTROL_PANEL_BASE}/Electrical-Control-Panel_1732707241_WNo_4167d4167.png`,
-  lfb: `${CONTROL_PANEL_BASE}/Electrical-Control-Panel_1732707241_WNo_4167d4167.png`,
-  "lv-distribution": `${CONTROL_PANEL_BASE}/Electrical-Control-Panel_1732707241_WNo_4167d4167.png`,
+  ay: `${OIL_CHEMICAL_BASE}/AY.png`,
+  "ay-multistage": `${OIL_CHEMICAL_BASE}/AY.png`,
+  sldc: `${OIL_CHEMICAL_BASE}/SLDC.png`,
+  sldtd: `${OIL_CHEMICAL_BASE}/${encodeURIComponent("SLDT(D).png")}`,
+  slfz: `${OIL_CHEMICAL_BASE}/SLFZ.png`,
+  slpp: `${OIL_CHEMICAL_BASE}/SLPP.png`,
+  "model-626113": `${OIL_CHEMICAL_BASE}/${encodeURIComponent("SLZA E F.png")}`,
+  tmc: `${OIL_CHEMICAL_BASE}/${encodeURIComponent("TMC TTMC.png")}`,
+  lec: `${CONTROL_PANEL_BASE}/LEC.png`,
+  lbp: `${CONTROL_PANEL_BASE}/LBP.png`,
+  "hv-control-cabinet": `${CONTROL_PANEL_BASE}/${encodeURIComponent("ВЫОКОВОЛЬТНЫЙ ЭЛЕКТРИЧКСКИЙ ШКАФ УПРАВЛЕНИЯ.png")}`,
+  lfb: `${CONTROL_PANEL_BASE}/LFB.png`,
+  "lv-distribution": `${CONTROL_PANEL_BASE}/${encodeURIComponent("РАСПРЕДЕЛИТЕЛЬНОЕ УСТРОЙСТВО НИЗКОГО НАПРЯЖЕНИЯ.png")}`,
   "xbd-d": `${FIRE_PUMP_BASE}/image_1677374308_WNo_800d450.jpg`,
   "xbd-dv": `${FIRE_PUMP_BASE}/XBD-DV-2-_1677374063_WNo_800d450.jpg`,
   "xbd-dw": `${FIRE_PUMP_BASE}/XBD-DW-2-_1677374116_WNo_800d450.jpg`,
@@ -56,9 +66,22 @@ export const PRODUCT_IMAGE_BY_SLUG: Record<string, string> = {
   "xbd-slow": `${FIRE_PUMP_BASE}/XBD-SLOW_1675841622_WNo_800d450.jpg`,
   "xbd-gdl": `${FIRE_PUMP_BASE}/XBD-GDL_1675841533_WNo_800d450.jpg`,
   xbc: `${FIRE_PUMP_BASE}/XBC.png`,
+  "xbd-c-lpt": `${FIRE_PUMP_BASE}/${encodeURIComponent("XBD C-LP(T).png")}`,
+  "fire-stable-water": `${FIRE_PUMP_BASE}/${encodeURIComponent("ПРОТИВОПОЖАРНОЕ ОБОРУДОВАНИЕ ДЛЯ СТАБИЛЬНОГО ВОДОСНАБЖЕНИЯ.png")}`,
   "smart-pump-station": `${MODULAR_SOLUTIONS_BASE}/LCZH_1677805732617_WNo_400d225.jpg`,
   "smart-pump-room": `${MODULAR_SOLUTIONS_BASE}/LCZF.png`,
   zwlv: `${MODULAR_SOLUTIONS_BASE}/ZWL-V-_1675845725_WNo_800d450.jpg`,
+  "water-vfd-full": `${MODULAR_SOLUTIONS_BASE}/${encodeURIComponent("ОБОРУДОВАНИЕ ДЛЯ ВОДОСНАБЖЕНИЯ С ПОЛНОСТЬЮ РЕГУЛИРУЕМОЙ ЧАСТОТОЙ.png")}`,
+  "water-vfd-direct": `${MODULAR_SOLUTIONS_BASE}/${encodeURIComponent("ОБОРУДОВАНИЕ ВОДОСНАБЖЕНИЯ С МИКРОПРОЦЕССОРНЫМ ПРЕОБРАЗОВАНИЕМ ЧАСТОТЫ ДЛЯ ПРЯМОГО ПОДКЛЮЧЕНИЯ.png")}`,
+  zwl: `${MODULAR_SOLUTIONS_BASE}/ZWL.png`,
+  "water-multi-tank-vfd": `${MODULAR_SOLUTIONS_BASE}/${encodeURIComponent("МНОГОРЕЗЕРВУАРНОЕ ОБОРУДОВАНИЕ ДЛЯ ПОДАЧИ ВОДЫ С ЧАСТОТНЫМ ПРЕОБРАЗОВАТЕЛЕМ.png")}`,
+  ktl: `${CATALOG_ROOT_BASE}/${encodeURIComponent("KTL, KTW.png")}`,
+  is: `${CATALOG_ROOT_BASE}/IS.png`,
+  s: `${CATALOG_ROOT_BASE}/S.png`,
+  sll: `${CATALOG_ROOT_BASE}/SLL.png`,
+  qgls: `${CATALOG_ROOT_BASE}/QGLS.png`,
+  qjb: `${CATALOG_ROOT_BASE}/QJB.png`,
+  zw: `${CATALOG_ROOT_BASE}/ZW.png`,
 };
 
 /** Dedicated category hero banners that exist in public/assets. */

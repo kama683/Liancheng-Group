@@ -1,0 +1,262 @@
+{
+  "Nav": {
+    "home": "Home",
+    "aboutUs": "About Us",
+    "catalog": "Catalog",
+    "projects": "Projects",
+    "contacts": "Contacts",
+    "contactCta": "Contact Us"
+  },
+  "Footer": {
+    "navigationHeading": "Navigation",
+    "productsHeading": "Products",
+    "contactsHeading": "Contacts",
+    "certifications": "Certifications",
+    "address": "Fengbang Industrial Park, Shanghai",
+    "rightsReserved": "All rights reserved."
+  },
+  "LanguageSwitcher": {
+    "ru": "Рус",
+    "kk": "Қаз",
+    "en": "Eng",
+    "zh": "中文"
+  },
+  "Contact": {
+    "form": {
+      "eyebrow": "Request",
+      "title": "Send a Request",
+      "intro": "Describe your task — we'll respond within 24 hours. Technical specifications can be added if needed.",
+      "contactDataSection": "Contact Details",
+      "fields": {
+        "name": "Name",
+        "company": "Company",
+        "email": "Email",
+        "phone": "Phone"
+      },
+      "messageSection": "Message",
+      "messagePlaceholder": "We need to select a pump for…",
+      "techCta": {
+        "title": "Want to select equipment as accurately as possible?",
+        "description": "If you know the equipment specifications, fill in the technical parameters. This will help our engineers select the most suitable model.",
+        "button": "Add Technical Specifications"
+      },
+      "engineering": {
+        "eyebrow": "Engineering Section",
+        "title": "Technical Specifications",
+        "description": "All fields are optional — fill in what you know.",
+        "collapse": "Collapse"
+      },
+      "primaryParams": "Primary Parameters",
+      "extraParams": "Additional Parameters",
+      "primaryFields": {
+        "model": "Model",
+        "flow": "Flow rate (m³/h)",
+        "head": "Head (m)",
+        "power": "Power (kW)",
+        "speed": "Rotation speed (rpm)",
+        "efficiency": "Efficiency (%)",
+        "temperature": "Operating temperature (°C)",
+        "inletDiameter": "Inlet diameter (mm)",
+        "outletDiameter": "Outlet diameter (mm)",
+        "pumpMaterial": "Pump material"
+      },
+      "extraFields": {
+        "motor": "Motor",
+        "voltage": "Voltage (V)",
+        "protectionLevel": "Protection rating",
+        "coolingMethod": "Cooling method",
+        "motorEfficiency": "Motor efficiency (%)",
+        "weight": "Weight (kg)"
+      },
+      "paramsTable": {
+        "eyebrow": "Parameters Table",
+        "title": "Engineering Specifications Table",
+        "description": "Installation dimensions and weight by motor series and models. Scroll the table horizontally if it doesn't fit on screen."
+      },
+      "scheme": {
+        "eyebrow": "Pump Scheme",
+        "title": "Diagram with Component Labels",
+        "description": "Check the form fields against the pump diagram (A, B, C, D…).",
+        "alt": "Pump diagram with component labels"
+      },
+      "upload": {
+        "title": "Drag files here",
+        "or": "or",
+        "chooseFile": "choose a file",
+        "hint": "PDF, DWG, DOCX, XLSX, images — up to 10 MB"
+      },
+      "submit": "Send Request",
+      "submitHint": "We'll respond within 24 hours."
+    },
+    "direct": {
+      "title": "Have questions?",
+      "description": "Contact us directly — our engineers and project managers are always available.",
+      "address": {
+        "label": "Address",
+        "value": "Fengbang Industrial Park, Shanghai, China"
+      },
+      "email": {
+        "label": "Email"
+      },
+      "phone": {
+        "label": "Phone"
+      },
+      "hours": {
+        "label": "Working Hours",
+        "value": "Mon–Fri, 09:00–18:00",
+        "timezoneNote": "(UTC+8, Shanghai)"
+      }
+    }
+  },
+  "PumpTable": {
+    "pumpSeries": "Pump Series",
+    "motorModel": "Motor Model",
+    "power": "Power",
+    "powerUnit": "(kW)",
+    "installDimensions": "Installation Dimensions (mm)",
+    "mounting": "Mounting",
+    "motorWeight": "Weight",
+    "motorWeightUnit": "motor (kg)",
+    "baseWeight": "Weight",
+    "baseWeightUnit": "base (kg)"
+  },
+  "Common": {
+    "home": "Home",
+    "products": "Products",
+    "contactUs": "Contact Us",
+    "headquartersNote": "Headquarters is located in Fengbang Industrial Park, Shanghai."
+  },
+  "CatalogNav": {
+    "wastewater-submersible": "SUBMERSIBLE SEWAGE PUMPS, MIXERS AND EQUIPMENT",
+    "single-suction-centrifugal": "GENERAL INDUSTRIAL APPLICATIONS AND CONSTRUCTION",
+    "double-suction-split-case": "INDUSTRIAL APPLICATIONS AND AGRICULTURE",
+    "petrochemical": "OIL AND CHEMICAL INDUSTRY, API610",
+    "control-panel": "ELECTRICAL CONTROL PANELS",
+    "fire-pump": "FIRE PUMP EQUIPMENT TO FM / UL STANDARD",
+    "water-supply-complete": "MODULAR SOLUTIONS",
+    "valves": "PIPELINE VALVES",
+    "valvesFooterLabel": "Pipeline Valves"
+  },
+  "Faq": {
+    "title": "Frequently Asked Questions"
+  },
+  "News": {
+    "label": "News",
+    "title": "News and Publications",
+    "body": "The news section is under development. You can get up-to-date information on Bellery pumps products and projects through the contact form."
+  },
+  "Services": {
+    "label": "Service",
+    "title": "Service and Support",
+    "button": "Contact Service"
+  },
+  "Solutions": {
+    "breadcrumbLabel": "Solutions",
+    "eyebrow": "Modular Solutions"
+  },
+  "Applications": {
+    "breadcrumbLabel": "Applications",
+    "title": "Industries of Application",
+    "waterWastewaterLink": "Water Supply and Wastewater",
+    "waterEquipmentLink": "Water Supply Equipment",
+    "wastewaterPumpsLink": "Wastewater Pumps"
+  },
+  "Home": {
+    "heroPrefix": "One of the largest manufacturers of",
+    "heroHighlight": "pumps, valves and control systems",
+    "heroSuffix": "in China",
+    "intro": "Over 3,000 types of products for water supply, fire protection, industry, petrochemicals and energy. Reasonable prices, reliable quality, in-house research and manufacturing.",
+    "catalogButton": "Product Catalog",
+    "productsEyebrow": "Products",
+    "catalogTitle": "Bellery pumps Catalog",
+    "wholeCatalogButton": "Full Catalog",
+    "companyParagraph": "The company owns five major industrial parks located in the economically developed areas of Shanghai, Jiangsu and Zhejiang, covering 550,000 square meters. Headquarters is located in Fengbang Industrial Park, Shanghai.",
+    "aboutButton": "More About the Company",
+    "allProjectsLink": "All Projects"
+  },
+  "HomeCta": {
+    "title": "Need advice on selecting equipment?",
+    "description": "Bellery specialists will help you select a pump or system for your parameters — flow rate, head, medium and operating mode.",
+    "button": "Request a Consultation"
+  },
+  "Projects": {
+    "completedTitle": "Completed Projects",
+    "industriesTitle": "Industries",
+    "otherSitesTitle": "Other Sites",
+    "discussButton": "Discuss Your Project"
+  },
+  "ProjectDetail": {
+    "infoTitle": "Project Information",
+    "location": "Location",
+    "industry": "Industry",
+    "features": "Features",
+    "tasks": "Tasks Solved",
+    "benefits": "Solution Benefits",
+    "previous": "Previous",
+    "next": "Next",
+    "otherProjects": "Other Projects",
+    "learnMore": "Learn more",
+    "equipmentEyebrow": "Equipment",
+    "equipmentTitle": "Equipment Used",
+    "viewCatalog": "View Full Catalog"
+  },
+  "AboutUs": {
+    "title": "A Well-Known Large-Scale Enterprise",
+    "subsidiariesTitle": "Subsidiaries",
+    "productionTitle": "Production and Testing",
+    "productionLink": "More About Production",
+    "certificationsTitle": "Certifications and Awards",
+    "awardsIntro": "Bellery pumps has been awarded:",
+    "certificationsLink": "All Certifications",
+    "clientsTitle": "Products Used in Companies' Projects",
+    "sectionsTitle": "About Us Sections",
+    "subnav": {
+      "our-company": "Our Company",
+      "innovation": "Innovation",
+      "history": "History",
+      "sustainability": "Environment",
+      "production": "Production",
+      "certifications": "Certifications"
+    }
+  },
+  "AboutSubPage": {
+    "extraPages": {
+      "production": "Production",
+      "certifications": "Certifications and Qualifications",
+      "careers": "Careers",
+      "media-relations": "Media Relations",
+      "investor-relations": "Investor Relations",
+      "our-divisions": "Divisions"
+    },
+    "button": "Go to the \"About Us\" section",
+    "backLink": "← Back to \"About Us\""
+  },
+  "ProductDetail": {
+    "category": "Category",
+    "description": "Description",
+    "specsHeading": "Technical Specifications",
+    "applications": "Applications",
+    "relatedTitle": "Related Products",
+    "backLink": "← Back to Catalog"
+  },
+  "CategoryPage": {
+    "allPumpsTitle": "Industrial Pumps",
+    "pumpsTitle": "Pumps",
+    "controlTitle": "Electrical Control Panels",
+    "valvesTitle": "Pipeline Valves",
+    "waterTitle": "Water Supply Equipment",
+    "searchPlaceholderAll": "Search pump by model…",
+    "searchPlaceholderCategory": "Search by model or name…",
+    "noResults": "Nothing found",
+    "helpTitle": "Need help choosing?",
+    "helpText": "Our specialists will help you select equipment for your tasks."
+  },
+  "ContactPage": {
+    "title": "Contact Us",
+    "intro": "One request — for both the client and the engineer. Describe your task, and add technical parameters only if needed.",
+    "faqIntro": "Answers to common questions about working with Bellery pumps"
+  },
+  "RootMetadata": {
+    "title": "Bellery — Product Catalog"
+  }
+}

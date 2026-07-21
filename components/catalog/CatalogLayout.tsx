@@ -1,6 +1,7 @@
 "use client";
 
-import Link from "next/link";
+import { useTranslations } from "next-intl";
+import { Link } from "@/i18n/navigation";
 import { MessageCircle } from "lucide-react";
 import { useMemo, useState } from "react";
 import { ArrowLink } from "@/components/ui/ArrowLink";
@@ -27,6 +28,9 @@ export function CatalogLayout({
 }: CatalogLayoutProps) {
   const { activePanel, showPanel } = useCatalogPanel();
   const [query, setQuery] = useState("");
+  const t = useTranslations("CategoryPage");
+  const tCatalogNav = useTranslations("CatalogNav");
+  const tCommon = useTranslations("Common");
 
   const hits = useMemo(() => {
     const q = query.trim().toLowerCase();
@@ -53,7 +57,7 @@ export function CatalogLayout({
           <div className="mt-2">
             {hits.length === 0 ? (
               <div className="py-2.5 px-1 text-[13px] text-subtle">
-                Ничего не найдено
+                {t("noResults")}
               </div>
             ) : (
               hits.map((hit) => (
@@ -73,6 +77,7 @@ export function CatalogLayout({
           {CATALOG_NAV.map((nav) => {
             const page = nav.page;
             const isCurrentPage = page === currentRoute;
+            const navLabelKey = nav.id === "valves" ? "valvesFooterLabel" : nav.id;
 
             if (isCurrentPage) {
               const active = nav.id === activePanel;
@@ -85,13 +90,13 @@ export function CatalogLayout({
                     setQuery("");
                   }}
                   className={cn(
-                    "block w-full text-left py-4 px-5 text-sm font-semibold border-b border-border-light leading-snug transition-[background,color] duration-150",
+                    "block w-full text-left py-4 px-5 text-sm font-semibold border-b border-border-light leading-snug transition-[background,color,box-shadow] duration-150",
                     active
                       ? "bg-surface-alt text-primary shadow-[inset_3px_0_0_#17a5cc]"
                       : "text-muted hover:bg-surface hover:text-primary"
                   )}
                 >
-                  {nav.label}
+                  {tCatalogNav(navLabelKey)}
                 </button>
               );
             }
@@ -107,7 +112,7 @@ export function CatalogLayout({
                 href={href}
                 className="block py-4 px-5 text-sm font-semibold text-muted border-b border-border-light leading-snug hover:bg-surface hover:text-primary no-underline last:border-b-0"
               >
-                {nav.label}
+                {tCatalogNav(navLabelKey)}
               </Link>
             );
           })}
@@ -120,13 +125,13 @@ export function CatalogLayout({
             aria-hidden
           />
           <div className="font-bold text-[15px] text-heading">
-            Нужна помощь в подборе?
+            {t("helpTitle")}
           </div>
           <p className="text-[13px] leading-relaxed text-muted mt-2">
-            Наши специалисты помогут подобрать оборудование для ваших задач.
+            {t("helpText")}
           </p>
           <ArrowLink href="/contact" className="mt-3.5 text-sm">
-            Связаться с нами
+            {tCommon("contactUs")}
           </ArrowLink>
         </div>
       </aside>
@@ -139,7 +144,7 @@ export function CatalogLayout({
             className={panel.id === activePanel ? "block" : "hidden"}
           >
             <h2 className="font-heading font-bold text-heading text-[clamp(24px,3vw,32px)] leading-tight">
-              {panel.label}
+              {tCatalogNav(panel.id === "valves" ? "valvesFooterLabel" : panel.id)}
             </h2>
             {panel.section.paragraphs.map((paragraph) => (
               <p

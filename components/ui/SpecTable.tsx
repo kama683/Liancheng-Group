@@ -1,4 +1,4 @@
-import Link from "next/link";
+import { Link } from "@/i18n/navigation";
 import { parseSpecRow } from "@/lib/catalog";
 import { cn } from "@/lib/utils";
 import { BreadcrumbChevron } from "./Accordion";

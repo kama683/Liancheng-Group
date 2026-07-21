@@ -2,9 +2,9 @@
 
 export const ASSETS = {
   logo: {
-    src: "/assets/logo/chatgpt-image-8-2026-10_24_09-mrc53lj4-removebg-preview.png",
-    width: 500,
-    height: 500,
+    src: "/assets/logo/updated-logo.png",
+    width: 470,
+    height: 575,
     alt: "Bellery",
   },
   heroBg: {

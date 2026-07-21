@@ -1,0 +1,262 @@
+{
+  "Nav": {
+    "home": "首页",
+    "aboutUs": "关于我们",
+    "catalog": "产品目录",
+    "projects": "项目案例",
+    "contacts": "联系我们",
+    "contactCta": "联系我们"
+  },
+  "Footer": {
+    "navigationHeading": "导航",
+    "productsHeading": "产品",
+    "contactsHeading": "联系方式",
+    "certifications": "认证证书",
+    "address": "中国上海奉贤工业园区",
+    "rightsReserved": "版权所有。"
+  },
+  "LanguageSwitcher": {
+    "ru": "Рус",
+    "kk": "Қаз",
+    "en": "Eng",
+    "zh": "中文"
+  },
+  "Contact": {
+    "form": {
+      "eyebrow": "咨询申请",
+      "title": "发送咨询",
+      "intro": "请描述您的需求——我们将在24小时内回复。技术参数为选填项。",
+      "contactDataSection": "联系信息",
+      "fields": {
+        "name": "姓名",
+        "company": "公司",
+        "email": "电子邮箱",
+        "phone": "电话"
+      },
+      "messageSection": "留言",
+      "messagePlaceholder": "需要为……选型水泵",
+      "techCta": {
+        "title": "希望更精确地选配设备？",
+        "description": "如果您了解设备的技术参数，请填写技术参数。这将帮助工程师为您选择最合适的型号。",
+        "button": "添加技术参数"
+      },
+      "engineering": {
+        "eyebrow": "工程参数",
+        "title": "技术参数",
+        "description": "所有字段均为选填——请填写您已知的信息。",
+        "collapse": "收起"
+      },
+      "primaryParams": "主要参数",
+      "extraParams": "附加参数",
+      "primaryFields": {
+        "model": "型号",
+        "flow": "流量（m³/h）",
+        "head": "扬程（m）",
+        "power": "功率（kW）",
+        "speed": "转速（r/min）",
+        "efficiency": "效率（%）",
+        "temperature": "工作温度（°C）",
+        "inletDiameter": "进口直径（mm）",
+        "outletDiameter": "出口直径（mm）",
+        "pumpMaterial": "泵体材质"
+      },
+      "extraFields": {
+        "motor": "电机",
+        "voltage": "电压（V）",
+        "protectionLevel": "防护等级",
+        "coolingMethod": "冷却方式",
+        "motorEfficiency": "电机效率（%）",
+        "weight": "重量（kg）"
+      },
+      "paramsTable": {
+        "eyebrow": "参数表",
+        "title": "工程参数表",
+        "description": "按电机系列和型号列出的安装尺寸及重量。如表格超出屏幕，请左右滑动查看。"
+      },
+      "scheme": {
+        "eyebrow": "泵体示意图",
+        "title": "带部件标注的示意图",
+        "description": "请对照泵体示意图核对表单字段（A、B、C、D…）。",
+        "alt": "带部件标注的水泵示意图"
+      },
+      "upload": {
+        "title": "将文件拖放到此处",
+        "or": "或",
+        "chooseFile": "选择文件",
+        "hint": "PDF、DWG、DOCX、XLSX、图片——最大10 MB"
+      },
+      "submit": "发送咨询",
+      "submitHint": "我们将在24小时内回复。"
+    },
+    "direct": {
+      "title": "还有疑问？",
+      "description": "直接与我们联系——我们的工程师和项目经理随时为您服务。",
+      "address": {
+        "label": "地址",
+        "value": "中国上海奉贤工业园区"
+      },
+      "email": {
+        "label": "邮箱"
+      },
+      "phone": {
+        "label": "电话"
+      },
+      "hours": {
+        "label": "工作时间",
+        "value": "周一至周五 09:00–18:00",
+        "timezoneNote": "（UTC+8，上海）"
+      }
+    }
+  },
+  "PumpTable": {
+    "pumpSeries": "泵型号",
+    "motorModel": "电机型号",
+    "power": "功率",
+    "powerUnit": "（kW）",
+    "installDimensions": "安装尺寸（mm）",
+    "mounting": "安装方式",
+    "motorWeight": "重量",
+    "motorWeightUnit": "电机（kg）",
+    "baseWeight": "重量",
+    "baseWeightUnit": "底座（kg）"
+  },
+  "Common": {
+    "home": "首页",
+    "products": "产品",
+    "contactUs": "联系我们",
+    "headquartersNote": "总部位于中国上海奉贤工业园区。"
+  },
+  "CatalogNav": {
+    "wastewater-submersible": "污水提升泵、搅拌机及成套设备",
+    "single-suction-centrifugal": "通用工业与建筑应用",
+    "double-suction-split-case": "工业应用与农业",
+    "petrochemical": "石油化工行业，API610标准",
+    "control-panel": "电气控制柜",
+    "fire-pump": "FM / UL标准消防泵设备",
+    "water-supply-complete": "模块化解决方案",
+    "valves": "管路阀门",
+    "valvesFooterLabel": "管路阀门"
+  },
+  "Faq": {
+    "title": "常见问题"
+  },
+  "News": {
+    "label": "新闻",
+    "title": "新闻与出版物",
+    "body": "新闻栏目正在建设中。如需了解Bellery pumps产品与项目的最新信息，请通过联系表单与我们取得联系。"
+  },
+  "Services": {
+    "label": "服务",
+    "title": "服务与支持",
+    "button": "联系服务部门"
+  },
+  "Solutions": {
+    "breadcrumbLabel": "解决方案",
+    "eyebrow": "模块化解决方案"
+  },
+  "Applications": {
+    "breadcrumbLabel": "应用领域",
+    "title": "应用行业",
+    "waterWastewaterLink": "给排水",
+    "waterEquipmentLink": "供水设备",
+    "wastewaterPumpsLink": "污水泵"
+  },
+  "Home": {
+    "heroPrefix": "中国最大的",
+    "heroHighlight": "水泵、阀门与控制系统",
+    "heroSuffix": "生产商之一",
+    "intro": "为供水、消防、工业、石油化工和能源领域提供3000多种产品。价格合理，质量可靠，拥有自主研发与生产能力。",
+    "catalogButton": "产品目录",
+    "productsEyebrow": "产品",
+    "catalogTitle": "Bellery pumps 产品目录",
+    "wholeCatalogButton": "查看全部产品",
+    "companyParagraph": "公司拥有五大工业园区，分布于上海、江苏和浙江等经济发达地区，占地55万平方米。总部位于中国上海奉贤工业园区。",
+    "aboutButton": "了解更多公司信息",
+    "allProjectsLink": "查看全部项目"
+  },
+  "HomeCta": {
+    "title": "需要设备选型建议吗？",
+    "description": "Bellery专家将根据您的参数——流量、扬程、介质和运行方式——帮助您选择合适的水泵或系统。",
+    "button": "申请咨询"
+  },
+  "Projects": {
+    "completedTitle": "已实施项目",
+    "industriesTitle": "应用行业",
+    "otherSitesTitle": "其他项目",
+    "discussButton": "洽谈您的项目"
+  },
+  "ProjectDetail": {
+    "infoTitle": "项目信息",
+    "location": "所在地",
+    "industry": "行业",
+    "features": "项目特点",
+    "tasks": "解决的任务",
+    "benefits": "方案优势",
+    "previous": "上一个",
+    "next": "下一个",
+    "otherProjects": "其他项目",
+    "learnMore": "了解更多",
+    "equipmentEyebrow": "设备",
+    "equipmentTitle": "所用设备",
+    "viewCatalog": "查看完整产品目录"
+  },
+  "AboutUs": {
+    "title": "知名大型企业",
+    "subsidiariesTitle": "子公司",
+    "productionTitle": "生产与检测",
+    "productionLink": "了解更多生产信息",
+    "certificationsTitle": "认证与荣誉",
+    "awardsIntro": "Bellery pumps 荣获以下荣誉：",
+    "certificationsLink": "查看全部认证",
+    "clientsTitle": "产品应用于知名企业项目",
+    "sectionsTitle": "关于我们各板块",
+    "subnav": {
+      "our-company": "公司简介",
+      "innovation": "技术创新",
+      "history": "发展历程",
+      "sustainability": "环境保护",
+      "production": "生产制造",
+      "certifications": "认证证书"
+    }
+  },
+  "AboutSubPage": {
+    "extraPages": {
+      "production": "生产制造",
+      "certifications": "认证与资质",
+      "careers": "招贤纳士",
+      "media-relations": "媒体关系",
+      "investor-relations": "投资者关系",
+      "our-divisions": "事业部"
+    },
+    "button": "前往「关于我们」板块",
+    "backLink": "← 返回「关于我们」"
+  },
+  "ProductDetail": {
+    "category": "分类",
+    "description": "产品描述",
+    "specsHeading": "技术参数",
+    "applications": "应用领域",
+    "relatedTitle": "相关产品",
+    "backLink": "← 返回产品目录"
+  },
+  "CategoryPage": {
+    "allPumpsTitle": "工业水泵",
+    "pumpsTitle": "水泵",
+    "controlTitle": "电气控制柜",
+    "valvesTitle": "管路阀门",
+    "waterTitle": "供水设备",
+    "searchPlaceholderAll": "按型号搜索水泵…",
+    "searchPlaceholderCategory": "按型号或名称搜索…",
+    "noResults": "未找到结果",
+    "helpTitle": "需要选型帮助吗？",
+    "helpText": "我们的专家将帮助您为您的任务选择合适的设备。"
+  },
+  "ContactPage": {
+    "title": "联系我们",
+    "intro": "一份申请，同时服务于客户与工程师。请描述您的需求，如有需要可补充技术参数。",
+    "faqIntro": "关于与Bellery pumps合作的常见问题解答"
+  },
+  "RootMetadata": {
+    "title": "Bellery — 产品目录"
+  }
+}

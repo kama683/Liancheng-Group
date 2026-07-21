@@ -29,7 +29,7 @@ export function ProductImage({
         alt={alt}
         fill
         sizes={sizes}
-        className="object-contain p-4"
+        className="object-contain p-4 transition-transform duration-400 ease-out group-hover:scale-105"
       />
     </div>
   );

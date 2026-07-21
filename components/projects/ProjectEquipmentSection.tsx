@@ -1,3 +1,4 @@
+import { useTranslations } from "next-intl";
 import { ArrowLink } from "@/components/ui/ArrowLink";
 import { Card } from "@/components/ui/Card";
 import { Eyebrow } from "@/components/ui/Eyebrow";
@@ -10,6 +11,8 @@ interface ProjectEquipmentCardProps {
 }
 
 export function ProjectEquipmentCard({ product }: ProjectEquipmentCardProps) {
+  const t = useTranslations("ProjectDetail");
+
   return (
     <Card
       href={`/products/${product.slug}`}
@@ -27,7 +30,7 @@ export function ProjectEquipmentCard({ product }: ProjectEquipmentCardProps) {
           {product.name}
         </h3>
         <span className="mt-3 inline-flex self-start rounded-sm border border-border-mid bg-white px-3 py-1.5 text-[11px] font-bold text-body transition-colors hover:border-primary hover:text-primary">
-          Подробнее
+          {t("learnMore")}
         </span>
       </div>
     </Card>
@@ -43,13 +46,15 @@ export function ProjectEquipmentSection({
   description,
   products,
 }: ProjectEquipmentSectionProps) {
+  const t = useTranslations("ProjectDetail");
+
   if (!products.length) return null;
 
   return (
     <section className="mt-14">
-      <Eyebrow>Оборудование</Eyebrow>
+      <Eyebrow>{t("equipmentEyebrow")}</Eyebrow>
       <h2 className="font-heading font-bold text-[clamp(24px,3vw,32px)] text-heading mt-2.5">
-        Используемое оборудование
+        {t("equipmentTitle")}
       </h2>
       <p className="text-[15px] leading-relaxed text-muted mt-3.5 max-w-[720px]">
         {description}
@@ -60,7 +65,7 @@ export function ProjectEquipmentSection({
         ))}
       </div>
       <p className="mt-6 text-sm">
-        <ArrowLink href="/products">Смотреть весь каталог</ArrowLink>
+        <ArrowLink href="/products">{t("viewCatalog")}</ArrowLink>
       </p>
     </section>
   );

@@ -23,6 +23,7 @@
   --color-stat-grid: #e6eef2;
   --color-pill-blue-bg: #e8f6fa;
   --color-error: #e07a7a;
+  --color-success: #3fa66a;
 
   --font-sans: var(--font-manrope);
   --font-heading: var(--font-pt-sans);
@@ -69,7 +70,7 @@ body {
   flex-direction: column;
   background: var(--color-background);
   color: var(--color-foreground);
-  font-family: var(--font-sans), system-ui, sans-serif;
+  font-family: var(--font-sans), var(--font-noto-sc), system-ui, sans-serif;
   -webkit-font-smoothing: antialiased;
 }
 
@@ -88,7 +89,7 @@ h1,
 h2,
 h3,
 h4 {
-  font-family: var(--font-heading), sans-serif;
+  font-family: var(--font-heading), var(--font-noto-sc), sans-serif;
 }
 
 @layer base {
@@ -115,6 +116,21 @@ h4 {
 
 .animate-contact-fade-in {
   animation: contact-fade-in 0.35s ease;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
 }
 
 /*

@@ -1,4 +1,4 @@
-import Link from "next/link";
+import { Link } from "@/i18n/navigation";
 import { cn } from "@/lib/utils";
 
 interface CardProps {
@@ -10,7 +10,7 @@ interface CardProps {
 export function Card({ href, children, className }: CardProps) {
   const classes = cn(
     "bg-white border border-border rounded-xl overflow-hidden transition-[box-shadow,transform] duration-200",
-    href && "block hover:shadow-card hover:-translate-y-1",
+    href && "group block hover:shadow-card hover:-translate-y-1",
     className
   );
 

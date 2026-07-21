@@ -1,5 +1,6 @@
 import Image from "next/image";
-import Link from "next/link";
+import { useTranslations } from "next-intl";
+import { Link } from "@/i18n/navigation";
 import { Mail, MapPin, Phone } from "lucide-react";
 import {
   BRAND,
@@ -12,6 +13,10 @@ const CONTACT_EMAIL = "export@bellery-pumps.com";
 const CONTACT_PHONE = "+86 21 XXXX XXXX";
 
 export function Footer() {
+  const t = useTranslations("Footer");
+  const tNav = useTranslations("Nav");
+  const tCatalogNav = useTranslations("CatalogNav");
+
   return (
     <footer className="bg-footer text-footer-text">
       <div className="max-w-[var(--container-content)] mx-auto px-8 pt-16 pb-10">
@@ -21,8 +26,8 @@ export function Footer() {
               <Image
                 src={LOGO_PATH}
                 alt={BRAND}
-                width={44}
-                height={44}
+                width={38}
+                height={46}
                 className="object-contain bg-white rounded-sm p-1"
               />
               <span className="font-heading font-bold text-lg text-white">
@@ -36,20 +41,20 @@ export function Footer() {
 
           <div>
             <h4 className="text-[13px] font-bold tracking-wide uppercase text-white mb-4">
-              Навигация
+              {t("navigationHeading")}
             </h4>
             <div className="flex flex-col gap-2.5 text-sm">
-              <FooterLink href="/">Дом</FooterLink>
-              <FooterLink href="/about-us">О компании</FooterLink>
-              <FooterLink href="/products">Каталог</FooterLink>
-              <FooterLink href="/projects">Проекты</FooterLink>
-              <FooterLink href="/about-us/certifications">Сертификаты</FooterLink>
+              <FooterLink href="/">{tNav("home")}</FooterLink>
+              <FooterLink href="/about-us">{tNav("aboutUs")}</FooterLink>
+              <FooterLink href="/products">{tNav("catalog")}</FooterLink>
+              <FooterLink href="/projects">{tNav("projects")}</FooterLink>
+              <FooterLink href="/about-us/certifications">{t("certifications")}</FooterLink>
             </div>
           </div>
 
           <div className="tablet:col-span-2">
             <h4 className="text-[13px] font-bold tracking-wide uppercase text-white mb-4">
-              Продукция
+              {t("productsHeading")}
             </h4>
             <div className="grid grid-cols-2 max-mobile:grid-cols-1 gap-x-6 gap-y-2.5 text-sm">
               {CATALOG_NAV.map((item) => {
@@ -57,10 +62,11 @@ export function Footer() {
                   item.category === "pumps" && item.page === "/products"
                     ? `${item.page}#${item.id}`
                     : item.page;
+                const labelKey = item.id === "valves" ? "valvesFooterLabel" : item.id;
 
                 return (
                   <FooterLink key={item.id} href={href}>
-                    {item.label}
+                    {tCatalogNav(labelKey)}
                   </FooterLink>
                 );
               })}
@@ -69,7 +75,7 @@ export function Footer() {
 
           <div>
             <h4 className="text-[13px] font-bold tracking-wide uppercase text-white mb-4">
-              Контакты
+              {t("contactsHeading")}
             </h4>
             <div className="flex flex-col gap-3 text-sm text-footer-link leading-relaxed">
               <span>{COMPANY_NAME}</span>
@@ -79,7 +85,7 @@ export function Footer() {
                   strokeWidth={2}
                   aria-hidden
                 />
-                Промышленный парк Фэнбан, Шанхай
+                {t("address")}
               </span>
               <a
                 href={`mailto:${CONTACT_EMAIL}`}
@@ -108,7 +114,7 @@ export function Footer() {
         </div>
 
         <div className="border-t border-[#33434d] mt-11 pt-5 text-[13px] text-footer-muted">
-          <span>© {COMPANY_NAME} Все права защищены.</span>
+          <span>© {COMPANY_NAME} {t("rightsReserved")}</span>
         </div>
       </div>
     </footer>

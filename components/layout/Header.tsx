@@ -1,14 +1,16 @@
 "use client";
 
 import Image from "next/image";
-import Link from "next/link";
-import { usePathname } from "next/navigation";
+import { useTranslations } from "next-intl";
+import { Link, usePathname } from "@/i18n/navigation";
 import { Button } from "@/components/ui/Button";
+import { LanguageSwitcher } from "@/components/layout/LanguageSwitcher";
 import { BRAND, LOGO_PATH, MAIN_NAV } from "@/lib/site";
 import { cn, isActiveNav } from "@/lib/utils";
 
 export function Header() {
   const pathname = usePathname();
+  const t = useTranslations("Nav");
 
   return (
     <header className="sticky top-0 z-50 bg-white/96 backdrop-blur-sm border-b border-border-light">
@@ -20,7 +22,7 @@ export function Header() {
           <Image
             src={LOGO_PATH}
             alt={BRAND}
-            width={48}
+            width={39}
             height={48}
             className="object-contain"
             priority
@@ -46,14 +48,16 @@ export function Header() {
                     : "text-nav hover:text-primary"
                 )}
               >
-                {item.label}
+                {t(item.labelKey)}
               </Link>
             );
           })}
         </nav>
 
+        <LanguageSwitcher />
+
         <Button href="/contact" variant="header" className="shrink-0">
-          Связаться
+          {t("contactCta")}
         </Button>
       </div>
     </header>

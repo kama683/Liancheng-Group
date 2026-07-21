@@ -33,12 +33,18 @@ export function getProductSlugs(): string[] {
 
 function mergedCatalogSections(products: ProductDetail[]): Record<string, CatalogSection> {
   const merged: Record<string, CatalogSection> = {};
-  const navTitles = new Set(CATALOG_NAV.map((n) => n.title));
+  // Ids are language-neutral (CatalogNavItem.id / CatalogSection.id); titles are
+  // catalog.json display text and are matched against them only via this table,
+  // never used as a lookup key themselves — so translating CATALOG_NAV labels
+  // doesn't break the merge.
+  const navIds = new Set(CATALOG_NAV.map((n) => n.id));
+  const sectionTitleToId = new Map(data.sections.map((s) => [s.title, s.id]));
 
   for (const section of data.sections) {
-    if (!navTitles.has(section.title)) continue;
-    if (!merged[section.title]) {
-      merged[section.title] = {
+    if (!navIds.has(section.id)) continue;
+    if (!merged[section.id]) {
+      merged[section.id] = {
+        id: section.id,
         title: section.title,
         products: [],
         paragraphs: section.paragraphs ?? [],
@@ -46,29 +52,30 @@ function mergedCatalogSections(products: ProductDetail[]): Record<string, Catalo
         bullets: section.bullets,
       };
     }
-    const seen = new Set(merged[section.title].products.map((p) => p.slug));
+    const seen = new Set(merged[section.id].products.map((p) => p.slug));
     for (const p of section.products) {
       if (!seen.has(p.slug)) {
-        merged[section.title].products.push(p);
+        merged[section.id].products.push(p);
         seen.add(p.slug);
       }
     }
   }
 
   for (const p of products) {
-    const secTitle = p.section;
-    if (secTitle && navTitles.has(secTitle)) {
-      if (!merged[secTitle]) {
-        merged[secTitle] = {
-          title: secTitle,
+    const secId = p.section ? sectionTitleToId.get(p.section) : undefined;
+    if (secId && navIds.has(secId)) {
+      if (!merged[secId]) {
+        merged[secId] = {
+          id: secId,
+          title: p.section,
           products: [],
           paragraphs: [],
           project_list: [],
         };
       }
-      const seen = new Set(merged[secTitle].products.map((x) => x.slug));
+      const seen = new Set(merged[secId].products.map((x) => x.slug));
       if (!seen.has(p.slug)) {
-        merged[secTitle].products.push({
+        merged[secId].products.push({
           code: p.code,
           name: p.name,
           slug: p.slug,
@@ -77,19 +84,20 @@ function mergedCatalogSections(products: ProductDetail[]): Record<string, Catalo
     }
   }
 
-  for (const [cat, title] of Object.entries(CATEGORY_ANCHORS)) {
-    if (!merged[title]) {
-      merged[title] = {
-        title,
+  for (const [cat, anchorId] of Object.entries(CATEGORY_ANCHORS)) {
+    if (!merged[anchorId]) {
+      merged[anchorId] = {
+        id: anchorId,
+        title: CATALOG_NAV.find((n) => n.id === anchorId)?.title ?? anchorId,
         products: [],
         paragraphs: [],
         project_list: [],
       };
     }
-    const seen = new Set(merged[title].products.map((x) => x.slug));
+    const seen = new Set(merged[anchorId].products.map((x) => x.slug));
     for (const p of products) {
       if (p.category === cat && !seen.has(p.slug)) {
-        merged[title].products.push({
+        merged[anchorId].products.push({
           code: p.code,
           name: p.name,
           slug: p.slug,
@@ -114,7 +122,8 @@ export function buildCatalogPanels(
 
   return navItems.map((nav) => ({
     ...nav,
-    section: merged[nav.title] ?? {
+    section: merged[nav.id] ?? {
+      id: nav.id,
       title: nav.title,
       products: [],
       paragraphs: [],

@@ -24,16 +24,3 @@ export const INQUIRY_ICONS = {
   engineering: Settings2,
   quick: MessageSquare,
 } as const;
-
-const CONTACT_LABEL_ICONS: Record<string, LucideIcon> = {
-  "Главный офис": Building2,
-  Адрес: Building2,
-  "Электронная почта": Mail,
-  Email: Mail,
-  Телефон: Phone,
-  "Время работы": Clock,
-};
-
-export function getContactLabelIcon(label: string): LucideIcon {
-  return CONTACT_LABEL_ICONS[label] ?? Building2;
-}

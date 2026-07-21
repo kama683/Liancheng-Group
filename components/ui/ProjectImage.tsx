@@ -28,7 +28,7 @@ export function ProjectImage({
           alt={alt}
           fill
           sizes="(max-width: 900px) 100vw, 50vw"
-          className="object-cover"
+          className="object-cover transition-transform duration-400 ease-out group-hover:scale-105"
         />
       ) : (
         <Image

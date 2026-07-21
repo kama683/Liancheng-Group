@@ -5,6 +5,7 @@ export interface CatalogProductRef {
 }
 
 export interface CatalogSection {
+  id: string;
   title: string;
   products: CatalogProductRef[];
   paragraphs: string[];
