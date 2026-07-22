@@ -29,7 +29,7 @@ export default async function HomePage() {
     <>
       <section className="relative bg-white overflow-hidden min-h-115 tablet:min-h-155">
         <HeroBgImage variant="home" priority />
-        <PageContainer className="relative z-10 py-12 pb-16 tablet:py-17 tablet:pb-22">
+        <PageContainer className="relative z-10 pt-5 pb-16 tablet:pt-7 tablet:pb-22">
           <div className="max-w-[640px]">
             <div className="animate-hero-fade-up inline-block text-xs font-bold tracking-[1.4px] uppercase text-primary bg-[#f4fafc] border border-[#e3f2f7] px-4.5 py-2.5 rounded-pill mb-7">
               SHANGHAI LIANCHENG (GROUP) CO., LTD.

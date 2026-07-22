@@ -60,8 +60,20 @@ function PumpHeroBackdrop({
         width={ASSETS.heroPump.width}
         height={ASSETS.heroPump.height}
         priority={priority}
-        className="relative z-[1] w-full h-auto object-contain"
+        className={cn(
+          "relative z-[1] w-full h-auto object-contain",
+          layout === "home" && "scale-[0.55] translate-y-[-50%] translate-x-[5%]"
+        )}
       />
+      {layout === "home" && (
+        <Image
+          src={ASSETS.logoBackground.src}
+          alt=""
+          width={ASSETS.logoBackground.width}
+          height={ASSETS.logoBackground.height}
+          className="absolute left-0 bottom-0 translate-x-[3%] translate-y-[22%] w-[min(400px,44vw)] h-auto object-contain opacity-80 z-2 pointer-events-none"
+        />
+      )}
     </div>
   );
 }
